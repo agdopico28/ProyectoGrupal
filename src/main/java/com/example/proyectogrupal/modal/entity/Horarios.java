@@ -1,8 +1,7 @@
-package com.example.proyectogrupal.modals.entity;
+package com.example.proyectogrupal.modal.entity;
 
 import jakarta.persistence.*;
 
-import javax.xml.crypto.Data;
 import java.io.Serializable;
 import java.sql.Date;
 

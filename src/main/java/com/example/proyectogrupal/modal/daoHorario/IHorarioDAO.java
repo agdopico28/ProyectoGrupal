@@ -1,7 +1,6 @@
-package com.example.proyectogrupal.modals.daoHorario;
+package com.example.proyectogrupal.modal.daoHorario;
 
-import com.example.proyectogrupal.modals.entity.Clase;
-import com.example.proyectogrupal.modals.entity.Horarios;
+import com.example.proyectogrupal.modal.entity.Horarios;
 
 public interface IHorarioDAO {
     void save(Horarios horarios);

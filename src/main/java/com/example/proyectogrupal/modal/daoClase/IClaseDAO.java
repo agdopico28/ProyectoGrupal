@@ -1,6 +1,6 @@
-package com.example.proyectogrupal.modals.daoClase;
+package com.example.proyectogrupal.modal.daoClase;
 
-import com.example.proyectogrupal.modals.entity.Clase;
+import com.example.proyectogrupal.modal.entity.Clase;
 
 public interface IClaseDAO {
     void save(Clase clase);
