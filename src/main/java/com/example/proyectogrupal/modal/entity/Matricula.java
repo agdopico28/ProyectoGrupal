@@ -13,8 +13,8 @@ public class Matricula implements Serializable {
 
     //Con esto hacemos la refencia
     @ManyToOne
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
-    private UsuarioAdmin id_usuario;
+    @JoinColumn(name = "id_usuario_admin", referencedColumnName = "id_usuario_admin")
+    private UsuarioAdmin id_usuario_admin;
 
 
     @ManyToOne
@@ -25,9 +25,9 @@ public class Matricula implements Serializable {
     @Column(name = "estado")
     private boolean estado;
 
-    public Matricula(int id_matricula, UsuarioAdmin id_usuario, Curso curso, boolean estado) {
+    public Matricula(int id_matricula, UsuarioAdmin id_usuario_admin, Curso curso, boolean estado) {
         this.id_matricula = id_matricula;
-        this.id_usuario = id_usuario;
+        this.id_usuario_admin = id_usuario_admin;
         this.curso = curso;
         this.estado = estado;
     }
@@ -45,11 +45,11 @@ public class Matricula implements Serializable {
     }
 
     public UsuarioAdmin getId_usuario() {
-        return id_usuario;
+        return id_usuario_admin;
     }
 
-    public void setId_usuario(UsuarioAdmin id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId_usuario(UsuarioAdmin id_usuario_admin) {
+        this.id_usuario_admin = id_usuario_admin;
     }
 
     public Curso getCurso() {
