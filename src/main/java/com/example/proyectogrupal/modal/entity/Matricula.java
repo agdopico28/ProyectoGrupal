@@ -12,7 +12,7 @@ public class Matricula implements Serializable {
     private int id_matricula;
 
     //Con esto hacemos la refencia
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_usuario_admin", referencedColumnName = "id_usuario_admin")
     private UsuarioAdmin id_usuario_admin;
 
