@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="curso")
-public class Curso implements Serializable {
+public class  Curso implements Serializable {
 
     @Id
     @Column(name="id_curso")

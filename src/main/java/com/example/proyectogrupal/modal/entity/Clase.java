@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "clase", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_matricula"})
+        @UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_matricula"}) //puede que aqui este el error
 })
 public class Clase implements Serializable {
     @Id
@@ -22,8 +22,8 @@ public class Clase implements Serializable {
     private Curso curso;
 
     @ManyToOne
-    @JoinColumn(name = "id_horario", referencedColumnName = "id_horario")
-    private Horarios horarios;
+    @JoinColumn(name = "id_matricula", referencedColumnName = "id_matricula")
+    private Matricula matricula;
 
     @Column(name = "nombre_clase")
     private String nombre_clase;
@@ -31,18 +31,17 @@ public class Clase implements Serializable {
     private String color;
 
 
-    public Clase(
-            int id_clase,
-            Profesor profesor,
-            Curso curso,
-            Horarios horarios,
-            String nombre_clase,
-            String color
-    ) {
+    public Clase(int id_clase,
+                 Profesor profesor,
+                 Curso curso,
+                 Matricula matricula,
+                 String nombre_clase,
+                 String color)
+    {
         this.id_clase = id_clase;
         this.profesor = profesor;
         this.curso = curso;
-        this.horarios = horarios;
+        this.matricula = matricula;
         this.nombre_clase = nombre_clase;
         this.color = color;
     }
@@ -74,13 +73,12 @@ public class Clase implements Serializable {
         this.curso = curso;
     }
 
-
-    public Horarios getHorarios() {
-        return horarios;
+    public Matricula getMatricula() {
+        return matricula;
     }
 
-    public void setHorarios(Horarios horarios) {
-        this.horarios = horarios;
+    public void setMatricula(Matricula matricula) {
+        this.matricula = matricula;
     }
 
     public String getNombre_clase() {
