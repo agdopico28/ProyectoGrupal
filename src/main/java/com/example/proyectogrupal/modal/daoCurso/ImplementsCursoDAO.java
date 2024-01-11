@@ -1,4 +1,4 @@
-package com.example.proyectogrupal.modal.cursoDAO;
+package com.example.proyectogrupal.modal.daoCurso;
 
 import com.example.proyectogrupal.modal.entity.Curso;
 import jakarta.persistence.EntityManager;
