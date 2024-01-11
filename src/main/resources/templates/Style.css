@@ -3,5 +3,5 @@ body {
 }
 
 header {
-    background-image: linear-gradient(to right, #a25b)
+    background-image: linear-gradient(to right, rgba(205, 106, 143, 0.73),darkblue);
 }
