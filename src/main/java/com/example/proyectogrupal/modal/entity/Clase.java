@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "clase", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_matricula"}) //puede que aqui este el error
+        @UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_matricula"})
 })
 public class Clase implements Serializable {
     @Id
