@@ -1,12 +1,10 @@
 package com.example.proyectogrupal.modal.daoProfesorDao;
 
-import com.example.proyectogrupal.modal.entity.Matricula;
-import com.example.proyectogrupal.modal.entity.Profesor;
+import com.example.proyectogrupal.entity.Matricula;
+import com.example.proyectogrupal.entity.Profesor;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import java.io.Serializable;
 
 @Repository
 public class ImplementsProfesorDao implements IProfesor {

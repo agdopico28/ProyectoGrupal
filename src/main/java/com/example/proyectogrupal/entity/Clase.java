@@ -1,4 +1,4 @@
-package com.example.proyectogrupal.modal.entity;
+package com.example.proyectogrupal.entity;
 
 import jakarta.persistence.*;
 
@@ -31,13 +31,7 @@ public class Clase implements Serializable {
     private String color;
 
 
-    public Clase(int id_clase,
-                 Profesor profesor,
-                 Curso curso,
-                 Matricula matricula,
-                 String nombre_clase,
-                 String color)
-    {
+    public Clase(int id_clase, Profesor profesor, Curso curso, Matricula matricula, String nombre_clase, String color) {
         this.id_clase = id_clase;
         this.profesor = profesor;
         this.curso = curso;

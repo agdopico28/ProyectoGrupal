@@ -1,4 +1,4 @@
-package com.example.proyectogrupal.modal.entity;
+package com.example.proyectogrupal.entity;
 
 import jakarta.persistence.*;
 

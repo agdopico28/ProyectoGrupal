@@ -1,6 +1,6 @@
 package com.example.proyectogrupal.modal.daoUsuarioAdmin;
 
-import com.example.proyectogrupal.modal.entity.UsuarioAdmin;
+import com.example.proyectogrupal.entity.UsuarioAdmin;
 
 public interface IUsuarioAdminDao {
     void save(UsuarioAdmin usuarioAdmin);

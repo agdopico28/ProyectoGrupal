@@ -1,6 +1,6 @@
 package com.example.proyectogrupal.modal.estudianteDAO;
 
-import com.example.proyectogrupal.modal.entity.Estudiante;
+import com.example.proyectogrupal.entity.Estudiante;
 
 public interface EstudianteDAO {
 

@@ -1,8 +1,7 @@
 package com.example.proyectogrupal.modal.daoMatriculaDao;
 
-import com.example.proyectogrupal.modal.entity.Matricula;
-import com.example.proyectogrupal.modal.entity.Profesor;
-import com.example.proyectogrupal.modal.entity.UsuarioAdmin;
+import com.example.proyectogrupal.entity.Matricula;
+import com.example.proyectogrupal.entity.Profesor;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

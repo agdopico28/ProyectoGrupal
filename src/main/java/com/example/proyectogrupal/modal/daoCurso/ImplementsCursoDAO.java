@@ -1,6 +1,6 @@
 package com.example.proyectogrupal.modal.daoCurso;
 
-import com.example.proyectogrupal.modal.entity.Curso;
+import com.example.proyectogrupal.entity.Curso;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
