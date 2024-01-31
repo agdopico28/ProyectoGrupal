@@ -1,6 +1,6 @@
 package com.example.proyectogrupal.modal.daoHorario;
 
-import com.example.proyectogrupal.modal.entity.Horarios;
+import com.example.proyectogrupal.entity.Horarios;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

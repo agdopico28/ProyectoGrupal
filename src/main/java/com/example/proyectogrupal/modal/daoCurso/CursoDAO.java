@@ -1,6 +1,6 @@
 package com.example.proyectogrupal.modal.daoCurso;
 
-import com.example.proyectogrupal.modal.entity.Curso;
+import com.example.proyectogrupal.entity.Curso;
 
 public interface CursoDAO {
     void save (Curso curso);

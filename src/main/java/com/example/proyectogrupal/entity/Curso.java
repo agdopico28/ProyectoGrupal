@@ -1,4 +1,4 @@
-package com.example.proyectogrupal.modal.entity;
+package com.example.proyectogrupal.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="curso")
-public class  Curso implements Serializable {
+public class Curso implements Serializable {
 
     @Id
     @Column(name="id_curso")
@@ -31,7 +31,9 @@ public class  Curso implements Serializable {
     @Column(name="habilitar")
     private boolean habilitar;
 
-    public Curso(int id_curso, String nombre_curso, String descripcion_curso, Date fecha_inicio_curso, Date fecha_fin_curso, boolean habilitar) {
+    public Curso(int id_curso, String nombre_curso, String descripcion_curso, Date fecha_inicio_curso, Date fecha_fin_curso,
+                 boolean habilitar) {
+
         this.id_curso = id_curso;
         this.nombre_curso = nombre_curso;
         this.descripcion_curso = descripcion_curso;

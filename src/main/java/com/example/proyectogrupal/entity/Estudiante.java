@@ -1,4 +1,4 @@
-package com.example.proyectogrupal.modal.entity;
+package com.example.proyectogrupal.entity;
 
 import jakarta.persistence.*;
 
@@ -7,8 +7,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "estudiante", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"dni", "email"})
-})
+        @UniqueConstraint(columnNames = {"dni", "email"})}
+)
 
 public class Estudiante implements Serializable {
 
@@ -40,7 +40,9 @@ public class Estudiante implements Serializable {
     @Column(name="fecha_registro")
     private Date fecha_registro;
 
-    public Estudiante(int id_estudiante, String nombre_usuario, String contrasenya, String email, String nombre_estudiante, String apellido_estudiante, int telefono, String dni, Date fecha_registro) {
+    public Estudiante(int id_estudiante, String nombre_usuario, String contrasenya, String email, String nombre_estudiante,
+                      String apellido_estudiante, int telefono, String dni, Date fecha_registro) {
+
         this.id_estudiante = id_estudiante;
         this.nombre_usuario = nombre_usuario;
         this.contrasenya = contrasenya;

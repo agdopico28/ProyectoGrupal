@@ -1,6 +1,6 @@
 package com.example.proyectogrupal.modal.estudianteDAO;
 
-import com.example.proyectogrupal.modal.entity.Estudiante;
+import com.example.proyectogrupal.entity.Estudiante;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
