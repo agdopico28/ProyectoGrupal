@@ -28,14 +28,17 @@ public class ClaseRep implements ClaseRepContract {
 
     @Override
     public Clase findByNameClass(Clase clase) {
-        if(clase != null) {
-            return entityManager.find(Clase.class, clase.getNombre_clase());
+        if(clase == null) {
+            return null;
         }
-        return null;
+        return entityManager.find(Clase.class, clase.getNombre_clase());
     }
     @Override
-    public void save(Clase clase) {
-        entityManager.persist(clase);
+    public Clase save(Clase clase) {
+        if (clase.getId_clase() == null) {
+            entityManager.persist(clase);
+        }
+        return clase;
     }
 
     @Override
@@ -44,10 +47,10 @@ public class ClaseRep implements ClaseRepContract {
     }
 
     @Override
-    public void delete(Integer id) {
-        Clase clase = entityManager.find(Clase.class, id);
-        if (clase != null) {
+    public Clase delete(Clase clase) {
+        if(clase.getNombre_clase() != null) {
             entityManager.remove(clase);
         }
+        return clase;
     }
 }

@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Clase implements Serializable {
     @Id
     @Column(name = "id_clase")
-    private int id_clase;
+    private Long id_clase;
 
     @OneToOne
     @JoinColumn(name = "id_profesor", referencedColumnName = "id_profesor")
@@ -31,7 +31,7 @@ public class Clase implements Serializable {
     private String color;
 
 
-    public Clase(int id_clase, Profesor profesor, Curso curso, Matricula matricula, String nombre_clase, String color) {
+    public Clase(Long id_clase, Profesor profesor, Curso curso, Matricula matricula, String nombre_clase, String color) {
         this.id_clase = id_clase;
         this.profesor = profesor;
         this.curso = curso;
@@ -43,11 +43,11 @@ public class Clase implements Serializable {
     public Clase() {
     }
 
-    public int getId_clase() {
+    public Long getId_clase() {
         return id_clase;
     }
 
-    public void setId_clase(int id_clase) {
+    public void setId_clase(Long id_clase) {
         this.id_clase = id_clase;
     }
 
