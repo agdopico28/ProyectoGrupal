@@ -31,8 +31,8 @@ public class Clase implements Serializable {
     private String color;
 
 
-    public Clase(Long id_clase, Profesor profesor, Curso curso, Matricula matricula, String nombre_clase, String color) {
-        this.idClase = id_clase;
+    public Clase(Long idClase, Profesor profesor, Curso curso, Matricula matricula, String nombre_clase, String color) {
+        this.idClase = idClase;
         this.profesor = profesor;
         this.curso = curso;
         this.matricula = matricula;
