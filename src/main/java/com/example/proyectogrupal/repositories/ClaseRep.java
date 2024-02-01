@@ -35,7 +35,7 @@ public class ClaseRep implements ClaseRepContract {
     }
     @Override
     public Clase save(Clase clase) {
-        if (clase.getId_clase() == null) {
+        if (clase.getIdClase() == null) {
             entityManager.persist(clase);
         }
         return clase;
