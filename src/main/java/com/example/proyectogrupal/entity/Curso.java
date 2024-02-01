@@ -14,64 +14,75 @@ public class Curso implements Serializable {
 
     @Id
     @Column(name="id_curso")
-    private int id_curso;
+    private Long idCurso;
 
     @Column(name="nombre_curso")
-    private String nombre_curso;
+    private String nombreCurso;
 
     @Column(name="descripcion_curso")
-    private String descripcion_curso;
+    private String descripcionCurso;
 
     @Column(name="fecha_inicio_curso")
-    private Date fecha_inicio_curso;
+    private Date fechaInicioCurso;
 
     @Column(name="fecha_fin_curso")
-    private Date fecha_fin_curso;
+    private Date fechaFinCurso;
 
     @Column(name="habilitar")
     private boolean habilitar;
 
-    public Curso(int id_curso, String nombre_curso, String descripcion_curso, Date fecha_inicio_curso, Date fecha_fin_curso,
+    public Curso(Long idCurso, String nombreCurso, String descripcionCurso, Date fechaInicioCurso, Date fechaFinCurso,
                  boolean habilitar) {
 
-        this.id_curso = id_curso;
-        this.nombre_curso = nombre_curso;
-        this.descripcion_curso = descripcion_curso;
-        this.fecha_inicio_curso = fecha_inicio_curso;
-        this.fecha_fin_curso = fecha_fin_curso;
+        this.idCurso = idCurso;
+        this.nombreCurso = nombreCurso;
+        this.descripcionCurso = descripcionCurso;
+        this.fechaInicioCurso = fechaInicioCurso;
+        this.fechaFinCurso = fechaFinCurso;
         this.habilitar = habilitar;
     }
 
-    public String getNombre_curso() {
-        return nombre_curso;
+    public Curso() {
     }
 
-    public void setNombre_curso(String nombre_curso) {
-        this.nombre_curso = nombre_curso;
+    public Long getIdCurso() {
+        return idCurso;
     }
 
-    public String getDescripcion_curso() {
-        return descripcion_curso;
+    public void setIdCurso(Long idCurso) {
+        this.idCurso = idCurso;
     }
 
-    public void setDescripcion_curso(String descripcion_curso) {
-        this.descripcion_curso = descripcion_curso;
+    public String getNombreCurso() {
+        return nombreCurso;
     }
 
-    public Date getFecha_inicio_curso() {
-        return fecha_inicio_curso;
+    public void setNombreCurso(String nombreCurso) {
+        this.nombreCurso = nombreCurso;
     }
 
-    public void setFecha_inicio_curso(Date fecha_inicio_curso) {
-        this.fecha_inicio_curso = fecha_inicio_curso;
+    public String getDescripcionCurso() {
+        return descripcionCurso;
     }
 
-    public Date getFecha_fin_curso() {
-        return fecha_fin_curso;
+    public void setDescripcionCurso(String descripcionCurso) {
+        this.descripcionCurso = descripcionCurso;
     }
 
-    public void setFecha_fin_curso(Date fecha_fin_curso) {
-        this.fecha_fin_curso = fecha_fin_curso;
+    public Date getFechaInicioCurso() {
+        return fechaInicioCurso;
+    }
+
+    public void setFechaInicioCurso(Date fechaInicioCurso) {
+        this.fechaInicioCurso = fechaInicioCurso;
+    }
+
+    public Date getFechaFinCurso() {
+        return fechaFinCurso;
+    }
+
+    public void setFechaFinCurso(Date fechaFinCurso) {
+        this.fechaFinCurso = fechaFinCurso;
     }
 
     public boolean isHabilitar() {
@@ -80,17 +91,5 @@ public class Curso implements Serializable {
 
     public void setHabilitar(boolean habilitar) {
         this.habilitar = habilitar;
-    }
-
-    public Curso() {
-
-    }
-
-    public void setId_curso(int id_curso) {
-        this.id_curso = id_curso;
-    }
-
-    public int getId_curso() {
-        return id_curso;
     }
 }
