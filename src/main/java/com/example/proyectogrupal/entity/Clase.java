@@ -26,7 +26,7 @@ public class Clase implements Serializable {
     private Matricula matricula;
 
     @Column(name = "nombre_clase")
-    private String nombre__clase;
+    private String nombreClase;
     @Column(name = "color")
     private String color;
 
@@ -36,7 +36,7 @@ public class Clase implements Serializable {
         this.profesor = profesor;
         this.curso = curso;
         this.matricula = matricula;
-        this.nombre__clase = nombre_clase;
+        this.nombreClase = nombre_clase;
         this.color = color;
     }
 
@@ -75,12 +75,12 @@ public class Clase implements Serializable {
         this.matricula = matricula;
     }
 
-    public String getNombre__clase() {
-        return nombre__clase;
+    public String getNombreClase() {
+        return nombreClase;
     }
 
-    public void setNombre__clase(String nombre_clase) {
-        this.nombre__clase = nombre_clase;
+    public void setNombreClase(String nombre_clase) {
+        this.nombreClase = nombre_clase;
     }
 
     public String getColor() {
