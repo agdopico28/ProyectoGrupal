@@ -14,7 +14,7 @@ public class Estudiante implements Serializable {
 
     @Id
     @Column(name="id_estudiante")
-    private int id_estudiante;
+    private Long id_estudiante;
 
     @Column(name="nombre_usuario")
     private String nombre_usuario;
@@ -40,7 +40,7 @@ public class Estudiante implements Serializable {
     @Column(name="fecha_registro")
     private Date fecha_registro;
 
-    public Estudiante(int id_estudiante, String nombre_usuario, String contrasenya, String email, String nombre_estudiante,
+    public Estudiante(Long id_estudiante, String nombre_usuario, String contrasenya, String email, String nombre_estudiante,
                       String apellido_estudiante, int telefono, String dni, Date fecha_registro) {
 
         this.id_estudiante = id_estudiante;
@@ -58,11 +58,11 @@ public class Estudiante implements Serializable {
 
     }
 
-    public int getId_estudiante() {
+    public Long getId_estudiante() {
         return id_estudiante;
     }
 
-    public void setId_estudiante(int id_estudiante) {
+    public void setId_estudiante(Long id_estudiante) {
         this.id_estudiante = id_estudiante;
     }
 

@@ -10,7 +10,7 @@ import java.sql.Date;
 public class Horarios implements Serializable {
     @Id
     @Column(name = "id_horario")
-    private int id_horario;
+    private Long id_horario;
 
     @ManyToOne
     @JoinColumn(name = "id_clase", referencedColumnName = "id_clase")
@@ -24,7 +24,7 @@ public class Horarios implements Serializable {
     @Column(name = "dia_semana")
     private String dia_semana;
 
-    public Horarios(int id_horario, Clase clase, Date hora_inicio, Date hora_fin, String dia_semana) {
+    public Horarios(Long id_horario, Clase clase, Date hora_inicio, Date hora_fin, String dia_semana) {
         this.id_horario = id_horario;
         this.clase = clase;
         this.hora_inicio = hora_inicio;
@@ -35,11 +35,11 @@ public class Horarios implements Serializable {
     public Horarios() {
     }
 
-    public int getId_horario() {
+    public Long getId_horario() {
         return id_horario;
     }
 
-    public void setId_horario(int id_horario) {
+    public void setId_horario(Long id_horario) {
         this.id_horario = id_horario;
     }
 

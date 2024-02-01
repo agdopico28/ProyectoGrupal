@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Matricula implements Serializable {
     @Id
     @Column(name = "id_matricula")
-    private int id_matricula;
+    private Long id_matricula;
 
     //Con esto hacemos la refencia
     @OneToOne
@@ -25,7 +25,7 @@ public class Matricula implements Serializable {
     @Column(name = "estado")
     private boolean estado;
 
-    public Matricula(int id_matricula, UsuarioAdmin id_usuario_admin, Curso curso, boolean estado) {
+    public Matricula(Long id_matricula, UsuarioAdmin id_usuario_admin, Curso curso, boolean estado) {
         this.id_matricula = id_matricula;
         this.id_usuario_admin = id_usuario_admin;
         this.curso = curso;
@@ -36,11 +36,11 @@ public class Matricula implements Serializable {
 
     }
 
-    public int getId_matricula() {
+    public Long getId_matricula() {
         return id_matricula;
     }
 
-    public void setId_matricula(int id_matricula) {
+    public void setId_matricula(Long id_matricula) {
         this.id_matricula = id_matricula;
     }
 
