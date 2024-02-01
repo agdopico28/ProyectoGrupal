@@ -1,6 +1,5 @@
 package com.example.proyectogrupal.repositories;
 
-import com.example.proyectogrupal.entity.Clase;
 import com.example.proyectogrupal.entity.Curso;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +11,13 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class CursoRep implements CursoRepContract {
+public class CourseRep implements CourseRepContract {
 
     private final Map<Long, Curso> courses = new HashMap<>();
     private EntityManager entityManager;
 
     @Autowired
-    public CursoRep(EntityManager theEntityManager) {
+    public CourseRep(EntityManager theEntityManager) {
         entityManager = theEntityManager;
     }
     @Override

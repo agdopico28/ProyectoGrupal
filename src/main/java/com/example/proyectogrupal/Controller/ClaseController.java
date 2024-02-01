@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/clases")
 public class ClaseController {
-
     private final ClaseServContract claseServContract;
 
     @Autowired

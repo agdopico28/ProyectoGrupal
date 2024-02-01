@@ -4,7 +4,7 @@ import com.example.proyectogrupal.entity.Curso;
 
 import java.util.List;
 
-public interface CursoRepContract {
+public interface CourseRepContract {
     List<Curso> allCourses();
     Curso findByName(Curso curso);
     Curso save (Curso curso);
