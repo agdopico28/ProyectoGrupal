@@ -31,12 +31,12 @@ public class Clase implements Serializable {
     private String color;
 
 
-    public Clase(Long idClase, Profesor profesor, Curso curso, Matricula matricula, String nombre_clase, String color) {
+    public Clase(Long idClase, Profesor profesor, Curso curso, Matricula matricula, String nombreClase, String color) {
         this.idClase = idClase;
         this.profesor = profesor;
         this.curso = curso;
         this.matricula = matricula;
-        this.nombreClase = nombre_clase;
+        this.nombreClase = nombreClase;
         this.color = color;
     }
 
@@ -79,8 +79,8 @@ public class Clase implements Serializable {
         return nombreClase;
     }
 
-    public void setNombreClase(String nombre_clase) {
-        this.nombreClase = nombre_clase;
+    public void setNombreClase(String nombreClase) {
+        this.nombreClase = nombreClase;
     }
 
     public String getColor() {
