@@ -31,7 +31,7 @@ public class ClaseRep implements ClaseRepContract {
         if(clase == null) {
             return null;
         }
-        return entityManager.find(Clase.class, clase.getNombre_clase());
+        return entityManager.find(Clase.class, clase.getNombre__clase());
     }
     @Override
     public Clase save(Clase clase) {
@@ -48,7 +48,7 @@ public class ClaseRep implements ClaseRepContract {
 
     @Override
     public Clase delete(Clase clase) {
-        if(clase.getNombre_clase() != null) {
+        if(clase.getNombre__clase() != null) {
             entityManager.remove(clase);
         }
         return clase;
