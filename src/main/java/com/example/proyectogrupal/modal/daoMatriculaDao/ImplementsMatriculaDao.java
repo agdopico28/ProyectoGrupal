@@ -30,7 +30,7 @@ public class ImplementsMatriculaDao implements IMatriculaDao{
 
     @Override
     public void delete(Matricula matricula) {
-        entityManager.remove(matricula.getId_matricula());
+        entityManager.remove(matricula.getIdMatricula());
     }
 
     @Override

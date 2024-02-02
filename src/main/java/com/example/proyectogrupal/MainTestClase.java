@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Date;
 
 public class MainTestClase {
-    private static String baseURL = "http://172.17.0.2:8080/clases";
+    private static String baseURL = "http://localhost:8080/clases";
     public static void main(String[] args) {
 
         final UsuarioAdmin joseluis = new UsuarioAdmin(1, "Rayden", "Jose Luis Muriach",

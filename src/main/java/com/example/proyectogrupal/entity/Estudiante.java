@@ -14,10 +14,10 @@ public class Estudiante implements Serializable {
 
     @Id
     @Column(name="id_estudiante")
-    private Long id_estudiante;
+    private Long idEstudiante;
 
     @Column(name="nombre_usuario")
-    private String nombre_usuario;
+    private String nombreUsuario;
 
     @Column(name="contrasenya")
     private String contrasenya;
@@ -26,10 +26,10 @@ public class Estudiante implements Serializable {
     private String email;
 
     @Column(name="nombre_estudiante")
-    private String nombre_estudiante;
+    private String nombreEstudiante;
 
     @Column(name="apellido_estudiante")
-    private String apellido_estudiante;
+    private String apellidoEstudiante;
 
     @Column(name="telefono")
     private int telefono;
@@ -38,40 +38,40 @@ public class Estudiante implements Serializable {
     private String dni;
 
     @Column(name="fecha_registro")
-    private Date fecha_registro;
+    private Date fechaRegistro;
 
-    public Estudiante(Long id_estudiante, String nombre_usuario, String contrasenya, String email, String nombre_estudiante,
-                      String apellido_estudiante, int telefono, String dni, Date fecha_registro) {
+    public Estudiante(Long idEstudiante, String nombreUsuario, String contrasenya, String email, String nombreEstudiante,
+                      String apellidoEstudiante, int telefono, String dni, Date fechaRegistro) {
 
-        this.id_estudiante = id_estudiante;
-        this.nombre_usuario = nombre_usuario;
+        this.idEstudiante = idEstudiante;
+        this.nombreUsuario = nombreUsuario;
         this.contrasenya = contrasenya;
         this.email = email;
-        this.nombre_estudiante = nombre_estudiante;
-        this.apellido_estudiante = apellido_estudiante;
+        this.nombreEstudiante = nombreEstudiante;
+        this.apellidoEstudiante = apellidoEstudiante;
         this.telefono = telefono;
         this.dni = dni;
-        this.fecha_registro = fecha_registro;
+        this.fechaRegistro = fechaRegistro;
     }
 
     public Estudiante() {
 
     }
 
-    public Long getId_estudiante() {
-        return id_estudiante;
+    public Long getIdEstudiante() {
+        return idEstudiante;
     }
 
-    public void setId_estudiante(Long id_estudiante) {
-        this.id_estudiante = id_estudiante;
+    public void setIdEstudiante(Long idEstudiante) {
+        this.idEstudiante = idEstudiante;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setNombreUsuario(String nombreusuario) {
+        this.nombreUsuario = nombreusuario;
     }
 
     public String getContrasenya() {
@@ -90,20 +90,20 @@ public class Estudiante implements Serializable {
         this.email = email;
     }
 
-    public String getNombre_estudiante() {
-        return nombre_estudiante;
+    public String getNombreEstudiante() {
+        return nombreEstudiante;
     }
 
-    public void setNombre_estudiante(String nombre_estudiante) {
-        this.nombre_estudiante = nombre_estudiante;
+    public void setNombreEstudiante(String nombreEstudiante) {
+        this.nombreEstudiante = nombreEstudiante;
     }
 
-    public String getApellido_estudiante() {
-        return apellido_estudiante;
+    public String getApellidoEstudiante() {
+        return apellidoEstudiante;
     }
 
-    public void setApellido_estudiante(String apellido_estudiante) {
-        this.apellido_estudiante = apellido_estudiante;
+    public void setApellidoEstudiante(String apellidoEstudiante) {
+        this.apellidoEstudiante = apellidoEstudiante;
     }
 
     public int getTelefono() {
@@ -122,11 +122,11 @@ public class Estudiante implements Serializable {
         this.dni = dni;
     }
 
-    public Date getFecha_registro() {
-        return fecha_registro;
+    public Date getFechaRegistro() {
+        return fechaRegistro;
     }
 
-    public void setFecha_registro(Date fecha_registro) {
-        this.fecha_registro = fecha_registro;
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 }

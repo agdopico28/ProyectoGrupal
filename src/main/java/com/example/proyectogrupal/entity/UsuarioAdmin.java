@@ -12,10 +12,10 @@ import java.io.Serializable;
 public class UsuarioAdmin implements Serializable {
     @Id
     @Column(name = "id_usuario_admin")
-    private int id_usuario_admin;
+    private int idUsuarioAdmin;
 
     @Column(name = "nombre_usuario")
-    private String nombre_usuario;
+    private String nombreUsuario;
 
     @Column(name = "nombre")
     private String nombre;
@@ -24,15 +24,15 @@ public class UsuarioAdmin implements Serializable {
     private String email;
 
     @Column(name = "contraseña")
-    private String contraseña;
+    private String contrasenya;
 
-    public UsuarioAdmin(int id_usuario_admin, String nombre_usuario, String nombre,
-                        String email, String contraseña) {
-        this.id_usuario_admin = id_usuario_admin;
-        this.nombre_usuario = nombre_usuario;
+    public UsuarioAdmin(int idUsuarioAdmin, String nombreUsuario, String nombre,
+                        String email, String contrasenya) {
+        this.idUsuarioAdmin = idUsuarioAdmin;
+        this.nombreUsuario = nombreUsuario;
         this.nombre = nombre;
         this.email = email;
-        this.contraseña = contraseña;
+        this.contrasenya = contrasenya;
     }
 
     public UsuarioAdmin() {
@@ -40,20 +40,20 @@ public class UsuarioAdmin implements Serializable {
     }
 
 
-    public int getId_usuario_admin() {
-        return id_usuario_admin;
+    public int getIdUsuarioAdmin() {
+        return idUsuarioAdmin;
     }
 
-    public void setId_usuario_admin(int id_usuario_admin) {
-        this.id_usuario_admin = id_usuario_admin;
+    public void setIdUsuarioAdmin(int idUsuarioAdmin) {
+        this.idUsuarioAdmin = idUsuarioAdmin;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public String getNombre() {
@@ -72,11 +72,11 @@ public class UsuarioAdmin implements Serializable {
         this.email = email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenya() {
+        return contrasenya;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenya(String contraseña) {
+        this.contrasenya = contraseña;
     }
 }

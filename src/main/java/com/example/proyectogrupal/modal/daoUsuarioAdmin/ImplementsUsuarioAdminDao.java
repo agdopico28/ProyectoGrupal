@@ -29,7 +29,7 @@ public class ImplementsUsuarioAdminDao implements IUsuarioAdminDao{
 
     @Override
     public void delete(UsuarioAdmin usuarioAdmin) {
-        entityManager.remove(usuarioAdmin.getId_usuario_admin());
+        entityManager.remove(usuarioAdmin.getIdUsuarioAdmin());
 
     }
 

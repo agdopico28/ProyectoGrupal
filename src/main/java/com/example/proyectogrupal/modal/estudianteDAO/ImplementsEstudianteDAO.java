@@ -26,7 +26,7 @@ public class ImplementsEstudianteDAO implements EstudianteDAO {
 
     @Override
     public void delete(Estudiante estudiante) {
-        entityManager.remove(estudiante.getId_estudiante());
+        entityManager.remove(estudiante.getIdEstudiante());
     }
 
     @Override

@@ -27,7 +27,7 @@ public class ImplementsProfesorDao implements IProfesor {
 
     @Override
     public void delete(Profesor profesor) {
-        entityManager.remove(profesor.getId_profesor());
+        entityManager.remove(profesor.getIdProfesor());
 
     }
 

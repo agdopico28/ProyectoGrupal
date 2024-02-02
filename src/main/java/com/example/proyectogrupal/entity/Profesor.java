@@ -11,13 +11,13 @@ import java.io.Serializable;
 public class Profesor implements Serializable {
     @Id
     @Column(name = "id_profesor")
-    private String id_profesor;
+    private String idProfesor;
 
     @Column(name = "nombre")
     private String nombre;
 
     @Column(name = "nombre_usuario")
-    private String nombre_usuario;
+    private String nombreUsuario;
 
     @Column(name = "telefono")
     private int telefono;
@@ -28,10 +28,10 @@ public class Profesor implements Serializable {
     @Column(name = "email")
     private String email;
 
-    public Profesor(String id_profesor, String nombre, String nombre_usuario, int telefono, String nif, String email) {
-        this.id_profesor = id_profesor;
+    public Profesor(String idProfesor, String nombre, String nombreUsuario, int telefono, String nif, String email) {
+        this.idProfesor = idProfesor;
         this.nombre = nombre;
-        this.nombre_usuario = nombre_usuario;
+        this.nombreUsuario = nombreUsuario;
         this.telefono = telefono;
         this.nif = nif;
         this.email = email;
@@ -41,12 +41,12 @@ public class Profesor implements Serializable {
 
     }
 
-    public String getId_profesor() {
-        return id_profesor;
+    public String getIdProfesor() {
+        return idProfesor;
     }
 
-    public void setId_profesor(String id_profesor) {
-        this.id_profesor = id_profesor;
+    public void setIdProfesor(String idProfesor) {
+        this.idProfesor = idProfesor;
     }
 
     public String getNombre() {
@@ -57,12 +57,12 @@ public class Profesor implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public int getTelefono() {

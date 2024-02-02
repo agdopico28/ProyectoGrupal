@@ -10,37 +10,37 @@ import java.sql.Date;
 public class Horarios implements Serializable {
     @Id
     @Column(name = "id_horario")
-    private Long id_horario;
+    private Long idHorario;
 
     @ManyToOne
     @JoinColumn(name = "id_clase", referencedColumnName = "id_clase")
     private Clase clase;
 
     @Column(name = "hora_inicio")
-    private Date hora_inicio;
+    private Date horaInicio;
     @Column(name = "hora_fin")
-    private Date hora_fin;
+    private Date horaFin;
 
     @Column(name = "dia_semana")
-    private String dia_semana;
+    private String diaSemana;
 
-    public Horarios(Long id_horario, Clase clase, Date hora_inicio, Date hora_fin, String dia_semana) {
-        this.id_horario = id_horario;
+    public Horarios(Long idHorario, Clase clase, Date horaInicio, Date horaFin, String diaSemana) {
+        this.idHorario = idHorario;
         this.clase = clase;
-        this.hora_inicio = hora_inicio;
-        this.hora_fin = hora_fin;
-        this.dia_semana = dia_semana;
+        this.horaInicio = horaInicio;
+        this.horaFin = horaFin;
+        this.diaSemana = diaSemana;
     }
 
     public Horarios() {
     }
 
-    public Long getId_horario() {
-        return id_horario;
+    public Long getIdHorario() {
+        return idHorario;
     }
 
-    public void setId_horario(Long id_horario) {
-        this.id_horario = id_horario;
+    public void setIdHorario(Long id_horario) {
+        this.idHorario = id_horario;
     }
 
     public Clase getClase() {
@@ -51,27 +51,27 @@ public class Horarios implements Serializable {
         this.clase = clase;
     }
 
-    public Date getHora_inicio() {
-        return hora_inicio;
+    public Date getHoraInicio() {
+        return horaInicio;
     }
 
-    public void setHora_inicio(Date hora_inicio) {
-        this.hora_inicio = hora_inicio;
+    public void setHoraInicio(Date hora_inicio) {
+        this.horaInicio = hora_inicio;
     }
 
-    public Date getHora_fin() {
-        return hora_fin;
+    public Date getHoraFin() {
+        return horaFin;
     }
 
-    public void setHora_fin(Date hora_fin) {
-        this.hora_fin = hora_fin;
+    public void setHoraFin(Date hora_fin) {
+        this.horaFin = hora_fin;
     }
 
-    public String getDia_semana() {
-        return dia_semana;
+    public String getDiaSemana() {
+        return diaSemana;
     }
 
-    public void setDia_semana(String dia_semana) {
-        this.dia_semana = dia_semana;
+    public void setDiaSemana(String dia_semana) {
+        this.diaSemana = dia_semana;
     }
 }
