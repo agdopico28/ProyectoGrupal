@@ -17,7 +17,7 @@ public class MainTestClase {
         final UserAdmin alejandro = new UserAdmin(3, "Destroyer", "Alejandro Corro",
                 "alejandro@alex.com", "test1234");
 
-        Teacher pedro = new Teacher("1", "Pedro", "PeSeg", 111111111,
+        Teacher pedro = new Teacher(1L, "Pedro", "PeSeg", 111111111,
                 "11111111A", "pedro@pedro.com");
         Course segundoDAM = new Course(1L, "Acceso a datos", "Curso de acceso a los datos",
                 new Date(01,10,2019), new Date(01,01,2020), true);
