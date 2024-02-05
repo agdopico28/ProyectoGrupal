@@ -22,6 +22,7 @@ public class MainTestClase {
         Curso segundoDAM = new Curso(1L, "Acceso a datos", "Curso de acceso a los datos",
                 new Date(01,10,2019), new Date(01,01,2020), true);
         Matricula matriculacion = new Matricula(1L, joseluis, segundoDAM, true);
+
         Clase nuevaClase = new Clase(1L, pedro, segundoDAM, matriculacion,
                 "Acceso a datos", "rojo");
 
