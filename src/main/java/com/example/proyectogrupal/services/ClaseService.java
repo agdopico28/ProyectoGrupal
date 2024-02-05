@@ -22,8 +22,8 @@ public class ClaseService implements ClaseServiceContract {
     }
 
     @Override
-    public Clase findByNameClass(Clase clase) {
-        return claseRep.findByNameClass(clase);
+    public Clase findByNameClass(String claseName) {
+        return claseRep.findByNameClass(claseName);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ClaseService implements ClaseServiceContract {
     }
 
     @Override
-    public Clase delete(Clase clase) {
-        return claseRep.delete(clase);
+    public void delete(String claseName) {
+        claseRep.delete(claseName);
     }
 }

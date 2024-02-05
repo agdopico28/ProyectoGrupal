@@ -12,7 +12,6 @@ import java.util.Map;
 
 @Repository
 public class ClaseRepository implements ClaseRepositoryContract {
-
     private final Map<Long, Clase> clases = new HashMap<>();
     private EntityManager entityManager;
 
@@ -27,18 +26,27 @@ public class ClaseRepository implements ClaseRepositoryContract {
     }
 
     @Override
-    public Clase findByNameClass(Clase clase) {
-        if(clase == null) {
+    public Clase findByNameClass(String claseName) {
+        if(claseName == null) {
             return null;
         }
-        return entityManager.find(Clase.class, clase.getNombreClase());
+        List<Clase> clases = entityManager.createQuery("SELECT c FROM Clase c WHERE c.nombreClase = :nombreClase", Clase.class)
+                .setParameter("nombreClase", claseName)
+                .getResultList();
+
+        return clases.isEmpty() ? null : clases.get(0);
     }
+
     @Override
     public Clase save(Clase clase) {
         if (clase.getIdClase() == null) {
+            // La entidad es nueva, por lo tanto, persistirla
             entityManager.persist(clase);
+            return clase; // Persist crea la entidad pero no devuelve una instancia gestionada
+        } else {
+            // La entidad ya existe, por lo tanto, actualizarla
+            return entityManager.merge(clase); // Merge actualiza la entidad y devuelve una instancia gestionada
         }
-        return clase;
     }
 
     @Override
@@ -47,10 +55,20 @@ public class ClaseRepository implements ClaseRepositoryContract {
     }
 
     @Override
-    public Clase delete(Clase clase) {
-        if(clase.getNombreClase() != null) {
-            entityManager.remove(clase);
+    public void delete(String claseName) {
+        if(claseName != null) {
+            // Buscar la entidad por nombre
+            Clase clase = entityManager.createQuery("SELECT c FROM Clase c WHERE c.nombreClase = :nombre", Clase.class)
+                    .setParameter("nombre", claseName)
+                    .getResultList()
+                    .stream()
+                    .findFirst()
+                    .orElse(null);
+
+            // Si la entidad existe, eliminarla
+            if(clase != null) {
+                entityManager.remove(entityManager.contains(clase) ? clase : entityManager.merge(clase));
+            }
         }
-        return clase;
     }
 }
