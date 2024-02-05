@@ -1,10 +1,10 @@
-package com.example.proyectogrupal.repositories;
+package com.example.proyectogrupal.services;
 
 import com.example.proyectogrupal.entity.UserAdmin;
 
 import java.util.List;
 
-public interface UserAdminRepositoryContract {
+public interface UserAdminServicesContract {
     List<UserAdmin> allUserAdmin();
     UserAdmin findByNameUserAdmin(String classUserAdmin);
     UserAdmin save(UserAdmin userAdmin);

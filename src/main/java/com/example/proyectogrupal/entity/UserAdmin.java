@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class UserAdmin implements Serializable {
     @Id
     @Column(name = "id_usuario_admin")
-    private int idUsuarioAdmin;
+    private Long idUsuarioAdmin;
 
     @Column(name = "nombre_usuario")
     private String nombreUsuario;
@@ -26,7 +26,7 @@ public class UserAdmin implements Serializable {
     @Column(name = "contraseña")
     private String contrasenya;
 
-    public UserAdmin(int idUsuarioAdmin, String nombreUsuario, String nombre,
+    public UserAdmin(Long idUsuarioAdmin, String nombreUsuario, String nombre,
                      String email, String contrasenya) {
         this.idUsuarioAdmin = idUsuarioAdmin;
         this.nombreUsuario = nombreUsuario;
@@ -40,11 +40,11 @@ public class UserAdmin implements Serializable {
     }
 
 
-    public int getIdUsuarioAdmin() {
+    public Long getIdUsuarioAdmin() {
         return idUsuarioAdmin;
     }
 
-    public void setIdUsuarioAdmin(int idUsuarioAdmin) {
+    public void setIdUsuarioAdmin(Long idUsuarioAdmin) {
         this.idUsuarioAdmin = idUsuarioAdmin;
     }
 
