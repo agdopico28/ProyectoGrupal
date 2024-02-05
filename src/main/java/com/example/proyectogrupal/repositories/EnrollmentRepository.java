@@ -49,7 +49,7 @@ public class EnrollmentRepository implements EnrollmentRepositoryContract{
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Long id) {
         if (id != null) {
             entityManager.remove(id);
         }

@@ -10,5 +10,5 @@ public interface EnrollmentRepositoryContract {
     Enrollment findByIdEnrollment(Integer id);
     Enrollment save (Enrollment enrollment);
     void update (Enrollment enrollment);
-    void delete (Integer id);
+    void delete (Long id);
 }

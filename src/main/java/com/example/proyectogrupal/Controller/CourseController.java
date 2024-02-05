@@ -1,6 +1,5 @@
 package com.example.proyectogrupal.Controller;
 
-import com.example.proyectogrupal.entity.Clase;
 import com.example.proyectogrupal.entity.Course;
 import com.example.proyectogrupal.services.CourseServicesContract;
 import org.springframework.stereotype.Controller;
@@ -33,7 +32,7 @@ public class CourseController {
     }
 
     @DeleteMapping("/delete/{nombre}")
-    public void eliminar(@PathVariable String classCourse) {
+    public void delete(@PathVariable String classCourse) {
         courseServicesContract.delete(classCourse);
     }
 }

@@ -35,7 +35,7 @@ public class EnrollmentServices implements EnrollmentServicesContract{
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Long id) {
         enrollmentRep.delete(id);
     }
 }
