@@ -1,5 +1,6 @@
 package com.example.proyectogrupal.repositories;
 
+import com.example.proyectogrupal.entity.Course;
 import com.example.proyectogrupal.entity.Teacher;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
@@ -23,19 +24,26 @@ public class TeacherRepository implements TeacherRepositoryContract{
     }
 
     @Override
-    public Teacher findByNameTeacher(Teacher teacher) {
-        if(teacher == null) {
+    public Teacher findByNameTeacher(String classTeacher) {
+        if(classTeacher == null) {
             return null;
         }
-        return entityManager.find(Teacher.class, teacher.getNombre());
+        List<Teacher> teachers = entityManager.createQuery("SELECT t FROM Teacher t WHERE t.nombre = :nombre", Teacher.class)
+                .setParameter("nombre", classTeacher)
+                .getResultList();
+
+        return teachers.isEmpty() ? null : teachers.get(0);
     }
 
     @Override
     public Teacher save(Teacher teacher) {
         if (teacher.getIdProfesor() == null) {
             entityManager.persist(teacher);
+            return teacher;
+        }else {
+            return  entityManager.merge(teacher);
         }
-        return teacher;
+
     }
 
     @Override
@@ -44,10 +52,21 @@ public class TeacherRepository implements TeacherRepositoryContract{
     }
 
     @Override
-    public Teacher delete(Teacher teacher) {
-        if(teacher.getNombre() != null) {
-            entityManager.remove(teacher);
+    public  void delete(String teacherName) {
+        if(teacherName != null) {
+            // Buscar la entidad por nombre
+            Teacher teacher = entityManager.createQuery("SELECT t FROM Teacher t WHERE t.nombre= :teacherName", Teacher.class)
+                    .setParameter("teacherName", teacherName)
+                    .getResultList()
+                    .stream()
+                    .findFirst()
+                    .orElse(null);
+
+            // Si la entidad existe, eliminarla
+            if(teacher != null) {
+                entityManager.remove(entityManager.contains(teacher) ? teacher : entityManager.merge(teacher));
+            }
         }
-        return teacher;
     }
+
 }
