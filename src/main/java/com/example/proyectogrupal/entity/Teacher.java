@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Teacher implements Serializable {
     @Id
     @Column(name = "id_profesor")
-    private String idProfesor;
+    private Long idProfesor;
 
     @Column(name = "nombre")
     private String nombre;
@@ -28,7 +28,7 @@ public class Teacher implements Serializable {
     @Column(name = "email")
     private String email;
 
-    public Teacher(String idProfesor, String nombre, String nombreUsuario, int telefono, String nif, String email) {
+    public Teacher(Long idProfesor, String nombre, String nombreUsuario, int telefono, String nif, String email) {
         this.idProfesor = idProfesor;
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
@@ -41,11 +41,11 @@ public class Teacher implements Serializable {
 
     }
 
-    public String getIdProfesor() {
+    public Long getIdProfesor() {
         return idProfesor;
     }
 
-    public void setIdProfesor(String idProfesor) {
+    public void setIdProfesor(Long idProfesor) {
         this.idProfesor = idProfesor;
     }
 
