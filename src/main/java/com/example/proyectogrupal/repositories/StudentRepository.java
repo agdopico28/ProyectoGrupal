@@ -18,17 +18,22 @@ public class StudentRepository implements StudentRepositoryContract {
     }
 
     @Override
-    public List<Student> allEstudents() {
+    public List<Student> allStudents() {
         return new ArrayList<>(estudents.values());
     }
 
     @Override
-    public Student findByNameEstudent(Student student) {
-        if(student == null) {
+    public Student findByNameStudent(String studentName) {
+        if(studentName == null) {
             return null;
         }
-        return entityManager.find(Student.class, student.getNombreEstudiante());
+        List<Student> students = entityManager.createQuery("SELECT s FROM Student s WHERE s.nombreEstudiante = :studentName", Student.class)
+                .setParameter("studentName", studentName)
+                .getResultList();
+
+        return students.isEmpty() ? null : students.get(0);
     }
+
 
     @Override
     public Student save(Student student) {
@@ -44,10 +49,17 @@ public class StudentRepository implements StudentRepositoryContract {
     }
 
     @Override
-    public Student delete(Student student) {
-        if(student.getNombreEstudiante() != null) {
-            entityManager.remove(student);
+    public void deleteByNameStudent(String studentName) {
+        if(studentName != null) {
+            List<Student> students = entityManager.createQuery(
+                    "SELECT s FROM Student s WHERE s.nombreEstudiante = :nombreEstudiante", Student.class)
+                    .setParameter("nombreEstudiante", studentName)
+                    .getResultList();
+
+            for (Student student : students) {
+                entityManager.remove(entityManager.contains(student) ? student : entityManager.merge(student));
+            }
         }
-        return student;
     }
+
 }

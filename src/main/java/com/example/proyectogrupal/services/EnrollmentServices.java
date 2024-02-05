@@ -1,15 +1,16 @@
 package com.example.proyectogrupal.services;
 
 import com.example.proyectogrupal.entity.Enrollment;
+import com.example.proyectogrupal.repositories.EnrollmentRepositoryContract;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class EnrollmentServices implements EnrollmentServicesContract{
-    private final EnrollmentServicesContract enrollmentRep;
+    private final EnrollmentRepositoryContract enrollmentRep;
 
-    public EnrollmentServices(EnrollmentServicesContract enrollmentRep) {
+    public EnrollmentServices(EnrollmentRepositoryContract enrollmentRep) {
         this.enrollmentRep = enrollmentRep;
     }
 
@@ -19,13 +20,13 @@ public class EnrollmentServices implements EnrollmentServicesContract{
     }
 
     @Override
-    public void findByIdEnrollment(Integer id) {
-        enrollmentRep.findByIdEnrollment(id);
+    public Enrollment findByIdEnrollment(Integer id) {
+        return enrollmentRep.findByIdEnrollment(id);
     }
 
     @Override
-    public void save(Enrollment enrollment) {
-        enrollmentRep.save(enrollment);
+    public Enrollment save(Enrollment enrollment) {
+        return enrollmentRep.save(enrollment);
     }
 
     @Override

@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Enrollment implements Serializable {
     @Id
     @Column(name = "id_matricula")
-    private Long idMatricula;
+    private Long idEnrollment;
 
     //Con esto hacemos la refencia
     @OneToOne
@@ -23,25 +23,25 @@ public class Enrollment implements Serializable {
 
 
     @Column(name = "estado")
-    private boolean estado;
+    private boolean state;
 
-    public Enrollment(Long idMatricula, UserAdmin idUserAdmin, Course course, boolean estado) {
-        this.idMatricula = idMatricula;
+    public Enrollment(Long idEnrollment, UserAdmin idUserAdmin, Course course, boolean state) {
+        this.idEnrollment = idEnrollment;
         this.idUserAdmin = idUserAdmin;
         this.course = course;
-        this.estado = estado;
+        this.state = state;
     }
 
     public Enrollment() {
 
     }
 
-    public Long getIdMatricula() {
-        return idMatricula;
+    public Long getIdEnrollment() {
+        return idEnrollment;
     }
 
-    public void setIdMatricula(Long idMatricula) {
-        this.idMatricula = idMatricula;
+    public void setIdEnrollment(Long idMatricula) {
+        this.idEnrollment = idMatricula;
     }
 
     public UserAdmin getIdUsuario() {
@@ -60,11 +60,11 @@ public class Enrollment implements Serializable {
         this.course = course;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public boolean isState() {
+        return state;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setState(boolean estado) {
+        this.state = estado;
     }
 }

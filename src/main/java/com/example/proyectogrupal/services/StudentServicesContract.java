@@ -5,9 +5,9 @@ import com.example.proyectogrupal.entity.Student;
 import java.util.List;
 
 public interface StudentServicesContract {
-    List<Student> allEstudents();
-    Student findByNameEstudent(Student student);
-    Student save(Student estudent);
+    List<Student> allStudents();
+    Student findByNameStudent(String studentName);
+    Student save(Student student);
     void update(Student student);
-    Student delete(Student student);
+    void deleteByNameStudent(String nameStudent);
 }
