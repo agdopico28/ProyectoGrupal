@@ -1,10 +1,12 @@
-package com.example.proyectogrupal.repositories;
+package com.example.proyectogrupal.services;
 
 import com.example.proyectogrupal.entity.Teacher;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface TeacherRepositoryContract  {
+
+public interface TeacherServicesContract{
     List<Teacher> allTeachers();
     Teacher findByNameTeacher(String classTeacher);
     Teacher save(Teacher teacher);
