@@ -1,5 +1,6 @@
 package com.example.proyectogrupal.Controller;
 
+import com.example.proyectogrupal.entity.Course;
 import com.example.proyectogrupal.entity.Enrollment;
 import com.example.proyectogrupal.entity.Student;
 import com.example.proyectogrupal.services.EnrollmentServicesContract;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/matricula")
+@RequestMapping("/enrollment")
 public class EnrollmentController {
     private final EnrollmentServicesContract enrollmentServicesContract;
 
@@ -22,6 +23,11 @@ public class EnrollmentController {
     @GetMapping
     public List<Enrollment> allEnrollment() {
         return enrollmentServicesContract.allEnrollment();
+    }
+
+    @PostMapping
+    public Enrollment save(@RequestBody Enrollment enrollment) {
+        return enrollmentServicesContract.save(enrollment);
     }
 
     @PostMapping("/update/{name}")

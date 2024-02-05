@@ -12,7 +12,6 @@ import java.util.Map;
 @Repository
 public class ScheduleRepository implements ScheduleRepositoryContract {
     private EntityManager entityManager;
-
     private final Map<Long, Schedule> horarios = new HashMap<>();
     public ScheduleRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
@@ -24,8 +23,8 @@ public class ScheduleRepository implements ScheduleRepositoryContract {
     }
 
     @Override
-    public void findById(Integer id) {
-        entityManager.find(Schedule.class, id);
+    public Schedule findById(Integer id) {
+        return entityManager.find(Schedule.class, id);
     }
 
     @Override
@@ -35,11 +34,15 @@ public class ScheduleRepository implements ScheduleRepositoryContract {
 
     @Override
     public void update(Schedule schedule) {
-        entityManager.merge(schedule);
+        if(schedule != null) {
+            entityManager.merge(schedule);
+        }
     }
 
     @Override
     public void delete(Integer id) {
-        entityManager.remove(id);
+        if(id != null) {
+            entityManager.remove(id);
+        }
     }
 }

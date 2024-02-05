@@ -18,8 +18,8 @@ public class ScheduleServices implements ScheduleServicesContract {
     }
 
     @Override
-    public void findById(Integer id) {
-        scheduleRep.findById(id);
+    public Schedule findById(Integer id) {
+        return scheduleRep.findById(id);
     }
 
     @Override
