@@ -33,8 +33,8 @@ public class ClaseController {
         claseServiceContract.update(clase);
     }
 
-    @DeleteMapping("/delete/{nombre}")
-    public void eliminar(@PathVariable String claseName) {
+    @DeleteMapping("/delete/{name}")
+    public void delete(@PathVariable String claseName) {
         claseServiceContract.delete(claseName);
     }
 }

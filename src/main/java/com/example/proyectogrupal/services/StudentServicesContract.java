@@ -9,5 +9,5 @@ public interface StudentServicesContract {
     Student findByNameStudent(String studentName);
     Student save(Student student);
     void update(Student student);
-    void deleteByNameStudent(String nameStudent);
+    void deleteByNameStudent(String studentName);
 }
