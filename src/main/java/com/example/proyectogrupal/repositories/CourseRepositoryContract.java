@@ -9,5 +9,5 @@ public interface CourseRepositoryContract {
     Course findByNameCourse(String classCourse);
     Course save (Course course);
     void update (Course course);
-    void delete (String nameCourse);
+    void delete (String courseName);
 }

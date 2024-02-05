@@ -35,7 +35,7 @@ public class CourseServices implements CourseServicesContract {
     }
 
     @Override
-    public void delete(String nameCourse) {
-        courseRep.delete(nameCourse);
+    public void delete(String courseName) {
+        courseRep.delete(courseName);
     }
 }
