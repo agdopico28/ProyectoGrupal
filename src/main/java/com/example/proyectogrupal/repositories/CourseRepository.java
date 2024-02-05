@@ -1,6 +1,5 @@
 package com.example.proyectogrupal.repositories;
 
-import com.example.proyectogrupal.entity.Clase;
 import com.example.proyectogrupal.entity.Course;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +26,17 @@ public class CourseRepository implements CourseRepositoryContract {
     }
 
     @Override
-    public Course findByName(String courseName) {
+    public Course findByNameCourse(String courseName) {
         if(courseName == null) {
             return null;
         }
-        List<Course> course = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :nombreCurso", Course.class)
-                .setParameter("nombreCurso", courseName)
+        List<Course> courses = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :courseName", Course.class)
+                .setParameter("courseName", courseName)
                 .getResultList();
 
-        return course.isEmpty() ? null : course.get(0);
+        return courses.isEmpty() ? null : courses.get(0);
     }
+
 
     @Override
     public Course save(Course course) {
@@ -54,11 +54,11 @@ public class CourseRepository implements CourseRepositoryContract {
     }
 
     @Override
-    public void delete(String nameCourse) {
-        if(nameCourse != null) {
+    public void delete(String courseName) {
+        if(courseName != null) {
             // Buscar la entidad por nombre
-            Course course = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :nombre", Course.class)
-                    .setParameter("nombre", nameCourse)
+            Course course = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :courseName", Course.class)
+                    .setParameter("courseName", courseName)
                     .getResultList()
                     .stream()
                     .findFirst()

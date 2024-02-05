@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CourseServicesContract {
     List<Course> allCourses();
-    Course findByName(String courseName);
+    Course findByNameCourse(String classCourse);
     Course save (Course course);
     void update (Course course);
     void delete (String nameCourse);
