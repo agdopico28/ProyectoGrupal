@@ -10,11 +10,11 @@ public class MainTestClase {
     private static String baseURL = "http://localhost:8080/clases"; //Hay que cambiarlo por 172.17.0.2
     public static void main(String[] args) {
 
-        final UserAdmin joseluis = new UserAdmin(1, "Rayden", "Jose Luis Muriach",
+        final UserAdmin joseluis = new UserAdmin(1L, "Rayden", "Jose Luis Muriach",
                 "joseluis@jose.com", "test1234");
-        final UserAdmin amalia = new UserAdmin(2, "agdopico", "Amalia Garcia",
+        final UserAdmin amalia = new UserAdmin(2L, "agdopico", "Amalia Garcia",
                 "amalia@amalia.com", "test1234");
-        final UserAdmin alejandro = new UserAdmin(3, "Destroyer", "Alejandro Corro",
+        final UserAdmin alejandro = new UserAdmin(3L, "Destroyer", "Alejandro Corro",
                 "alejandro@alex.com", "test1234");
 
         Teacher pedro = new Teacher(1L, "Pedro", "PeSeg", 111111111,
