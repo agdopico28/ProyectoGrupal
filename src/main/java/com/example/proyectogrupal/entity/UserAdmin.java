@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "user admin")
-public class UsuarioAdmin implements Serializable {
+public class UserAdmin implements Serializable {
     @Id
     @Column(name = "id_usuario_admin")
     private int idUsuarioAdmin;
@@ -26,8 +26,8 @@ public class UsuarioAdmin implements Serializable {
     @Column(name = "contraseña")
     private String contrasenya;
 
-    public UsuarioAdmin(int idUsuarioAdmin, String nombreUsuario, String nombre,
-                        String email, String contrasenya) {
+    public UserAdmin(int idUsuarioAdmin, String nombreUsuario, String nombre,
+                     String email, String contrasenya) {
         this.idUsuarioAdmin = idUsuarioAdmin;
         this.nombreUsuario = nombreUsuario;
         this.nombre = nombre;
@@ -35,7 +35,7 @@ public class UsuarioAdmin implements Serializable {
         this.contrasenya = contrasenya;
     }
 
-    public UsuarioAdmin() {
+    public UserAdmin() {
 
     }
 

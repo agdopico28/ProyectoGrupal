@@ -1,7 +1,7 @@
 package com.example.proyectogrupal.Controller;
 
 import com.example.proyectogrupal.entity.Clase;
-import com.example.proyectogrupal.services.ClaseServContract;
+import com.example.proyectogrupal.services.ClaseServiceContract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,20 +14,20 @@ import java.util.List;
 @Controller
 @RequestMapping("/clases")
 public class ClaseController {
-    private final ClaseServContract claseServContract;
+    private final ClaseServiceContract claseServiceContract;
 
     @Autowired
-    public ClaseController(ClaseServContract claseServContract) {
-        this.claseServContract = claseServContract;
+    public ClaseController(ClaseServiceContract claseServiceContract) {
+        this.claseServiceContract = claseServiceContract;
     }
 
     @GetMapping
     public List<Clase> allClasses() {
-        return claseServContract.allClasses();
+        return claseServiceContract.allClasses();
     }
 
     @PostMapping
     public Clase save(@RequestBody Clase clase) {
-        return claseServContract.save(clase);
+        return claseServiceContract.save(clase);
     }
 }

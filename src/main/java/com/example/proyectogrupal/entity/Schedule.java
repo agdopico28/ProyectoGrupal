@@ -7,7 +7,7 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "horarios")
-public class Horarios implements Serializable {
+public class Schedule implements Serializable {
     @Id
     @Column(name = "id_horario")
     private Long idHorario;
@@ -24,7 +24,7 @@ public class Horarios implements Serializable {
     @Column(name = "dia_semana")
     private String diaSemana;
 
-    public Horarios(Long idHorario, Clase clase, Date horaInicio, Date horaFin, String diaSemana) {
+    public Schedule(Long idHorario, Clase clase, Date horaInicio, Date horaFin, String diaSemana) {
         this.idHorario = idHorario;
         this.clase = clase;
         this.horaInicio = horaInicio;
@@ -32,7 +32,7 @@ public class Horarios implements Serializable {
         this.diaSemana = diaSemana;
     }
 
-    public Horarios() {
+    public Schedule() {
     }
 
     public Long getIdHorario() {

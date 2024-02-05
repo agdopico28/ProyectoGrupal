@@ -4,7 +4,7 @@ import com.example.proyectogrupal.entity.Clase;
 
 import java.util.List;
 
-public interface ClaseServContract {
+public interface ClaseServiceContract {
     List<Clase> allClasses();
     Clase findByNameClass(Clase clase);
     Clase save(Clase clase);

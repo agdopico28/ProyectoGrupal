@@ -10,7 +10,7 @@ import java.util.Date;
         @UniqueConstraint(columnNames = {"dni", "email"})}
 )
 
-public class Estudiante implements Serializable {
+public class Estudent implements Serializable {
 
     @Id
     @Column(name="id_estudiante")
@@ -40,8 +40,8 @@ public class Estudiante implements Serializable {
     @Column(name="fecha_registro")
     private Date fechaRegistro;
 
-    public Estudiante(Long idEstudiante, String nombreUsuario, String contrasenya, String email, String nombreEstudiante,
-                      String apellidoEstudiante, int telefono, String dni, Date fechaRegistro) {
+    public Estudent(Long idEstudiante, String nombreUsuario, String contrasenya, String email, String nombreEstudiante,
+                    String apellidoEstudiante, int telefono, String dni, Date fechaRegistro) {
 
         this.idEstudiante = idEstudiante;
         this.nombreUsuario = nombreUsuario;
@@ -54,7 +54,7 @@ public class Estudiante implements Serializable {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public Estudiante() {
+    public Estudent() {
 
     }
 

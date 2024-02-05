@@ -1,7 +1,7 @@
 package com.example.proyectogrupal.modal.daoProfesorDao;
 
-import com.example.proyectogrupal.entity.Matricula;
-import com.example.proyectogrupal.entity.Profesor;
+import com.example.proyectogrupal.entity.Enrollment;
+import com.example.proyectogrupal.entity.Teacher;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,24 +15,24 @@ public class ImplementsProfesorDao implements IProfesor {
     public ImplementsProfesorDao(EntityManager theEntityManager) {entityManager = theEntityManager;}
 
     @Override
-    public void save(Profesor profesor) {
-        entityManager.persist(profesor);
+    public void save(Teacher teacher) {
+        entityManager.persist(teacher);
     }
 
     @Override
-    public void update(Profesor profesor) {
-        entityManager.merge(profesor);
-
-    }
-
-    @Override
-    public void delete(Profesor profesor) {
-        entityManager.remove(profesor.getIdProfesor());
+    public void update(Teacher teacher) {
+        entityManager.merge(teacher);
 
     }
 
     @Override
-    public void findById(Profesor id) {
-        entityManager.find(Matricula.class, id);
+    public void delete(Teacher teacher) {
+        entityManager.remove(teacher.getIdProfesor());
+
+    }
+
+    @Override
+    public void findById(Teacher id) {
+        entityManager.find(Enrollment.class, id);
     }
 }

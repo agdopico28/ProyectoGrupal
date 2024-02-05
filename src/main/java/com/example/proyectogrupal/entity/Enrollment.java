@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "matricula")
-public class Matricula implements Serializable {
+public class Enrollment implements Serializable {
     @Id
     @Column(name = "id_matricula")
     private Long idMatricula;
@@ -14,25 +14,25 @@ public class Matricula implements Serializable {
     //Con esto hacemos la refencia
     @OneToOne
     @JoinColumn(name = "id_usuario_admin", referencedColumnName = "id_usuario_admin")
-    private UsuarioAdmin idUsuarioAdmin;
+    private UserAdmin idUserAdmin;
 
 
     @ManyToOne
     @JoinColumn(name = "id_curso", referencedColumnName = "id_curso")
-    private Curso curso;
+    private Course course;
 
 
     @Column(name = "estado")
     private boolean estado;
 
-    public Matricula(Long idMatricula, UsuarioAdmin idUsuarioAdmin, Curso curso, boolean estado) {
+    public Enrollment(Long idMatricula, UserAdmin idUserAdmin, Course course, boolean estado) {
         this.idMatricula = idMatricula;
-        this.idUsuarioAdmin = idUsuarioAdmin;
-        this.curso = curso;
+        this.idUserAdmin = idUserAdmin;
+        this.course = course;
         this.estado = estado;
     }
 
-    public Matricula() {
+    public Enrollment() {
 
     }
 
@@ -44,20 +44,20 @@ public class Matricula implements Serializable {
         this.idMatricula = idMatricula;
     }
 
-    public UsuarioAdmin getIdUsuario() {
-        return idUsuarioAdmin;
+    public UserAdmin getIdUsuario() {
+        return idUserAdmin;
     }
 
-    public void setIdUsuario(UsuarioAdmin idUsuarioAdmin) {
-        this.idUsuarioAdmin = idUsuarioAdmin;
+    public void setIdUsuario(UserAdmin idUserAdmin) {
+        this.idUserAdmin = idUserAdmin;
     }
 
-    public Curso getCurso() {
-        return curso;
+    public Course getCurso() {
+        return course;
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
+    public void setCurso(Course course) {
+        this.course = course;
     }
 
     public boolean isEstado() {

@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Table(name = "profesor", uniqueConstraints = {
         @UniqueConstraint(columnNames = {"nif", "email"})
 })
-public class Profesor implements Serializable {
+public class Teacher implements Serializable {
     @Id
     @Column(name = "id_profesor")
     private String idProfesor;
@@ -28,7 +28,7 @@ public class Profesor implements Serializable {
     @Column(name = "email")
     private String email;
 
-    public Profesor(String idProfesor, String nombre, String nombreUsuario, int telefono, String nif, String email) {
+    public Teacher(String idProfesor, String nombre, String nombreUsuario, int telefono, String nif, String email) {
         this.idProfesor = idProfesor;
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
@@ -37,7 +37,7 @@ public class Profesor implements Serializable {
         this.email = email;
     }
 
-    public Profesor() {
+    public Teacher() {
 
     }
 

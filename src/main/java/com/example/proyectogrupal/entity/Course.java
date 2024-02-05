@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="curso")
-public class Curso implements Serializable {
+public class Course implements Serializable {
 
     @Id
     @Column(name="id_curso")
@@ -31,8 +31,8 @@ public class Curso implements Serializable {
     @Column(name="habilitar")
     private boolean habilitar;
 
-    public Curso(Long idCurso, String nombreCurso, String descripcionCurso, Date fechaInicioCurso, Date fechaFinCurso,
-                 boolean habilitar) {
+    public Course(Long idCurso, String nombreCurso, String descripcionCurso, Date fechaInicioCurso, Date fechaFinCurso,
+                  boolean habilitar) {
 
         this.idCurso = idCurso;
         this.nombreCurso = nombreCurso;
@@ -42,7 +42,7 @@ public class Curso implements Serializable {
         this.habilitar = habilitar;
     }
 
-    public Curso() {
+    public Course() {
     }
 
     public Long getIdCurso() {

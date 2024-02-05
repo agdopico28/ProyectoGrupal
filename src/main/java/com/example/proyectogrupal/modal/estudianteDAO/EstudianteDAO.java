@@ -1,14 +1,14 @@
 package com.example.proyectogrupal.modal.estudianteDAO;
 
-import com.example.proyectogrupal.entity.Estudiante;
+import com.example.proyectogrupal.entity.Estudent;
 
 public interface EstudianteDAO {
 
-    void save (Estudiante estudiante);
+    void save (Estudent estudent);
 
-    void update(Estudiante estudiante);
+    void update(Estudent estudent);
 
-    void delete(Estudiante estudiante);
+    void delete(Estudent estudent);
 
     void findById(Integer id);
 

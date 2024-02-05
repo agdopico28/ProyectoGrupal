@@ -11,13 +11,13 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class ClaseRep implements ClaseRepContract {
+public class ClaseRepository implements ClaseRepositoryContract {
 
     private final Map<Long, Clase> clases = new HashMap<>();
     private EntityManager entityManager;
 
     @Autowired
-    public ClaseRep(EntityManager theEntityManager) {
+    public ClaseRepository(EntityManager theEntityManager) {
         entityManager = theEntityManager;
     }
 

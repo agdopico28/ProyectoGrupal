@@ -1,6 +1,6 @@
 package com.example.proyectogrupal.modal.daoUsuarioAdmin;
 
-import com.example.proyectogrupal.entity.UsuarioAdmin;
+import com.example.proyectogrupal.entity.UserAdmin;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,25 +16,25 @@ public class ImplementsUsuarioAdminDao implements IUsuarioAdminDao{
 
     @Override
     @Transactional
-    public void save(UsuarioAdmin usuarioAdmin) {
-        entityManager.persist(usuarioAdmin);
+    public void save(UserAdmin userAdmin) {
+        entityManager.persist(userAdmin);
 
     }
 
     @Override
-    public void update(UsuarioAdmin usuarioAdmin) {
-        entityManager.merge(usuarioAdmin);
+    public void update(UserAdmin userAdmin) {
+        entityManager.merge(userAdmin);
 
     }
 
     @Override
-    public void delete(UsuarioAdmin usuarioAdmin) {
-        entityManager.remove(usuarioAdmin.getIdUsuarioAdmin());
+    public void delete(UserAdmin userAdmin) {
+        entityManager.remove(userAdmin.getIdUsuarioAdmin());
 
     }
 
     @Override
     public void findById(Integer id) {
-        entityManager.find(UsuarioAdmin.class, id);
+        entityManager.find(UserAdmin.class, id);
     }
 }

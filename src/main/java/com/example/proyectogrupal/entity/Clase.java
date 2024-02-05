@@ -15,15 +15,15 @@ public class Clase implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "id_profesor", referencedColumnName = "id_profesor")
-    private Profesor profesor;
+    private Teacher teacher;
 
     @ManyToOne
     @JoinColumn(name = "id_curso", referencedColumnName = "id_curso")
-    private Curso curso;
+    private Course course;
 
     @ManyToOne
     @JoinColumn(name = "id_matricula", referencedColumnName = "id_matricula")
-    private Matricula matricula;
+    private Enrollment enrollment;
 
     @Column(name = "nombre_clase")
     private String nombreClase;
@@ -31,11 +31,11 @@ public class Clase implements Serializable {
     private String color;
 
 
-    public Clase(Long idClase, Profesor profesor, Curso curso, Matricula matricula, String nombreClase, String color) {
+    public Clase(Long idClase, Teacher teacher, Course course, Enrollment enrollment, String nombreClase, String color) {
         this.idClase = idClase;
-        this.profesor = profesor;
-        this.curso = curso;
-        this.matricula = matricula;
+        this.teacher = teacher;
+        this.course = course;
+        this.enrollment = enrollment;
         this.nombreClase = nombreClase;
         this.color = color;
     }
@@ -51,28 +51,28 @@ public class Clase implements Serializable {
         this.idClase = idClase;
     }
 
-    public Profesor getProfesor() {
-        return profesor;
+    public Teacher getProfesor() {
+        return teacher;
     }
 
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void setProfesor(Teacher teacher) {
+        this.teacher = teacher;
     }
 
-    public Curso getCurso() {
-        return curso;
+    public Course getCurso() {
+        return course;
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
+    public void setCurso(Course course) {
+        this.course = course;
     }
 
-    public Matricula getMatricula() {
-        return matricula;
+    public Enrollment getMatricula() {
+        return enrollment;
     }
 
-    public void setMatricula(Matricula matricula) {
-        this.matricula = matricula;
+    public void setMatricula(Enrollment enrollment) {
+        this.enrollment = enrollment;
     }
 
     public String getNombreClase() {

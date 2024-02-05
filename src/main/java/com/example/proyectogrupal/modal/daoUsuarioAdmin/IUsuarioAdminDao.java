@@ -1,10 +1,10 @@
 package com.example.proyectogrupal.modal.daoUsuarioAdmin;
 
-import com.example.proyectogrupal.entity.UsuarioAdmin;
+import com.example.proyectogrupal.entity.UserAdmin;
 
 public interface IUsuarioAdminDao {
-    void save(UsuarioAdmin usuarioAdmin);
-    void update(UsuarioAdmin usuarioAdmin);
-    void delete(UsuarioAdmin UsuarioAdmin);
+    void save(UserAdmin userAdmin);
+    void update(UserAdmin userAdmin);
+    void delete(UserAdmin UserAdmin);
     void findById(Integer id);
 }

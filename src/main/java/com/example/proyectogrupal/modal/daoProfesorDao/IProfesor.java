@@ -1,10 +1,10 @@
 package com.example.proyectogrupal.modal.daoProfesorDao;
 
-import com.example.proyectogrupal.entity.Profesor;
+import com.example.proyectogrupal.entity.Teacher;
 
 public interface IProfesor {
-    void save(Profesor profesor);
-    void update(Profesor profesor);
-    void delete(Profesor profesor);
-    void findById(Profesor id);
+    void save(Teacher teacher);
+    void update(Teacher teacher);
+    void delete(Teacher teacher);
+    void findById(Teacher id);
 }

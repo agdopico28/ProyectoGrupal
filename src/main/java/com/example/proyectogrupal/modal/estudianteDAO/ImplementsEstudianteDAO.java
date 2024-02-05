@@ -1,6 +1,6 @@
 package com.example.proyectogrupal.modal.estudianteDAO;
 
-import com.example.proyectogrupal.entity.Estudiante;
+import com.example.proyectogrupal.entity.Estudent;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,18 +15,18 @@ public class ImplementsEstudianteDAO implements EstudianteDAO {
     }
 
     @Override
-    public void save(Estudiante estudiante) {
-        entityManager.persist(estudiante);
+    public void save(Estudent estudent) {
+        entityManager.persist(estudent);
     }
 
     @Override
-    public void update(Estudiante estudiante) {
-        entityManager.merge(estudiante);
+    public void update(Estudent estudent) {
+        entityManager.merge(estudent);
     }
 
     @Override
-    public void delete(Estudiante estudiante) {
-        entityManager.remove(estudiante.getIdEstudiante());
+    public void delete(Estudent estudent) {
+        entityManager.remove(estudent.getIdEstudiante());
     }
 
     @Override

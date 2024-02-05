@@ -1,19 +1,19 @@
 package com.example.proyectogrupal.services;
 
 import com.example.proyectogrupal.entity.Clase;
-import com.example.proyectogrupal.repositories.ClaseRep;
-import com.example.proyectogrupal.repositories.ClaseRepContract;
+import com.example.proyectogrupal.repositories.ClaseRepository;
+import com.example.proyectogrupal.repositories.ClaseRepositoryContract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ClaseServ implements ClaseServContract {
-    private final ClaseRepContract claseRep;
+public class ClaseService implements ClaseServiceContract {
+    private final ClaseRepositoryContract claseRep;
 
     @Autowired
-    public ClaseServ(ClaseRep claseRep) {
-        this.claseRep = claseRep;
+    public ClaseService(ClaseRepository claseRepository) {
+        this.claseRep = claseRepository;
     }
 
     @Override
