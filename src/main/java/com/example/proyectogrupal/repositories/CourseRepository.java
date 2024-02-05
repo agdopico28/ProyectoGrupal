@@ -53,10 +53,21 @@ public class CourseRepository implements CourseRepositoryContract {
     }
 
     @Override
-    public Course delete(Course course) {
-        if(course.getNombreCurso() != null) {
-            entityManager.remove(course);
+    public void delete(String courseName) {
+        if(courseName != null) {
+            // Buscar la entidad por nombre
+            Course course = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :courseName", Course.class)
+                    .setParameter("courseName", courseName)
+                    .getResultList()
+                    .stream()
+                    .findFirst()
+                    .orElse(null);
+
+            // Si la entidad existe, eliminarla
+            if(course != null) {
+                entityManager.remove(entityManager.contains(course) ? course : entityManager.merge(course));
+            }
         }
-        return course;
     }
+
 }
