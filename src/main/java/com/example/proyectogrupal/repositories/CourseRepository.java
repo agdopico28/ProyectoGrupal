@@ -1,5 +1,6 @@
 package com.example.proyectogrupal.repositories;
 
+import com.example.proyectogrupal.entity.Clase;
 import com.example.proyectogrupal.entity.Course;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,17 @@ public class CourseRepository implements CourseRepositoryContract {
     }
 
     @Override
-    public Course findByName(Course course) {
-        if(course == null) {
+    public Course findByNameCourse(String courseName) {
+        if(courseName == null) {
             return null;
         }
-        return entityManager.find(Course.class, course.getNombreCurso());
+        List<Course> courses = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :courseName", Course.class)
+                .setParameter("courseName", courseName)
+                .getResultList();
+
+        return courses.isEmpty() ? null : courses.get(0);
     }
+
 
     @Override
     public Course save(Course course) {
