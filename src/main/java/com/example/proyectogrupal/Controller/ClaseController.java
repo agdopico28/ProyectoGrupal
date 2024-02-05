@@ -4,10 +4,7 @@ import com.example.proyectogrupal.entity.Clase;
 import com.example.proyectogrupal.services.ClaseServiceContract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,15 @@ public class ClaseController {
     @PostMapping
     public Clase save(@RequestBody Clase clase) {
         return claseServiceContract.save(clase);
+    }
+
+    @PutMapping("/update/{name}")
+    public void modify(@RequestBody Clase clase) {
+        claseServiceContract.update(clase);
+    }
+
+    @DeleteMapping("/delete/{nombre}")
+    public void eliminar(@PathVariable String claseName) {
+        claseServiceContract.delete(claseName);
     }
 }
