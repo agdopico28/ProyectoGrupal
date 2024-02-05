@@ -1,8 +1,6 @@
 package com.example.proyectogrupal.Controller;
 
-import com.example.proyectogrupal.entity.Course;
 import com.example.proyectogrupal.entity.Enrollment;
-import com.example.proyectogrupal.entity.Student;
 import com.example.proyectogrupal.services.EnrollmentServicesContract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
