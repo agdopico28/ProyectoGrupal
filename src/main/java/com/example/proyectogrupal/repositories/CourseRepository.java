@@ -1,5 +1,6 @@
 package com.example.proyectogrupal.repositories;
 
+import com.example.proyectogrupal.entity.Clase;
 import com.example.proyectogrupal.entity.Course;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,19 +27,25 @@ public class CourseRepository implements CourseRepositoryContract {
     }
 
     @Override
-    public Course findByName(Course course) {
-        if(course == null) {
+    public Course findByName(String courseName) {
+        if(courseName == null) {
             return null;
         }
-        return entityManager.find(Course.class, course.getNombreCurso());
+        List<Course> course = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :nombreCurso", Course.class)
+                .setParameter("nombreCurso", courseName)
+                .getResultList();
+
+        return course.isEmpty() ? null : course.get(0);
     }
 
     @Override
     public Course save(Course course) {
         if (course.getIdCurso() == null) {
             entityManager.persist(course);
+            return course;
+        }else{
+            return entityManager.merge(course);
         }
-        return course;
     }
 
     @Override
@@ -47,10 +54,20 @@ public class CourseRepository implements CourseRepositoryContract {
     }
 
     @Override
-    public Course delete(Course course) {
-        if(course.getNombreCurso() != null) {
-            entityManager.remove(course);
+    public void delete(String nameCourse) {
+        if(nameCourse != null) {
+            // Buscar la entidad por nombre
+            Course course = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :nombre", Course.class)
+                    .setParameter("nombre", nameCourse)
+                    .getResultList()
+                    .stream()
+                    .findFirst()
+                    .orElse(null);
+
+            // Si la entidad existe, eliminarla
+            if(course != null) {
+                entityManager.remove(entityManager.contains(course) ? course : entityManager.merge(course));
+            }
         }
-        return course;
     }
 }

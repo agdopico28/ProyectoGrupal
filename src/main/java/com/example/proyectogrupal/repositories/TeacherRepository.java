@@ -1,6 +1,5 @@
 package com.example.proyectogrupal.repositories;
 
-import com.example.proyectogrupal.entity.Estudent;
 import com.example.proyectogrupal.entity.Teacher;
 import jakarta.persistence.EntityManager;
 

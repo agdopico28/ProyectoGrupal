@@ -20,8 +20,8 @@ public class CourseServices implements CourseServicesContract {
     }
 
     @Override
-    public Course findByName(Course course) {
-        return courseRep.findByName(course);
+    public Course findByName(String courseName) {
+        return courseRep.findByName(courseName);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CourseServices implements CourseServicesContract {
     }
 
     @Override
-    public Course delete(Course course) {
-        return courseRep.delete(course);
+    public void delete(String nameCourse) {
+         courseRep.delete(nameCourse);
     }
 }
