@@ -1,9 +1,10 @@
 package com.example.proyectogrupal.services;
 
 import com.example.proyectogrupal.entity.Enrollment;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class EnrollmentServices implements EnrollmentServicesContract{
     private final EnrollmentServicesContract enrollmentRep;
 

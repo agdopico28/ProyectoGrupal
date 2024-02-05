@@ -2,12 +2,13 @@ package com.example.proyectogrupal.repositories;
 
 import com.example.proyectogrupal.entity.Student;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Repository
 public class StudentRepository implements StudentRepositoryContract {
     private final Map<Long, Student> estudents = new HashMap<>();
     private EntityManager entityManager;

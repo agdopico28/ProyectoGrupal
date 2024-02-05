@@ -2,11 +2,12 @@ package com.example.proyectogrupal.repositories;
 
 import com.example.proyectogrupal.entity.UserAdmin;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Repository
 public class UserAdminRepository implements UserAdminRepositoryContract{
     private final Map<Long, UserAdmin> userAdmin = new HashMap<>();
     private EntityManager entityManager;

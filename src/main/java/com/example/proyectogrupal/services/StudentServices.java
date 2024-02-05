@@ -1,13 +1,15 @@
 package com.example.proyectogrupal.services;
 
 import com.example.proyectogrupal.entity.Enrollment;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class EstudentServices implements EnrollmentServicesContract{
+@Service
+public class StudentServices implements EnrollmentServicesContract{
     private final EnrollmentServicesContract enrollmentRep;
 
-    public EstudentServices(EnrollmentServicesContract enrollmentRep) {
+    public StudentServices(EnrollmentServicesContract enrollmentRep) {
         this.enrollmentRep = enrollmentRep;
     }
 

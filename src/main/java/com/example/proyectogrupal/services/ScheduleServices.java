@@ -1,9 +1,10 @@
 package com.example.proyectogrupal.services;
 
 import com.example.proyectogrupal.entity.Schedule;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ScheduleServices implements ScheduleServicesContract {
     private final ScheduleServicesContract scheduleRep;
 

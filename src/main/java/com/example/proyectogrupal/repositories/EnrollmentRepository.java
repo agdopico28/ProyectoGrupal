@@ -3,12 +3,13 @@ package com.example.proyectogrupal.repositories;
 import com.example.proyectogrupal.entity.Course;
 import com.example.proyectogrupal.entity.Enrollment;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Repository
 public class EnrollmentRepository implements EnrollmentRepositoryContract{
 
     private final Map<Long, Enrollment> enrollment = new HashMap<>();
