@@ -18,7 +18,7 @@ public class CourseController {
     }
 
     @GetMapping
-    public List<Course> allClasses() {
+    public List<Course> allCourses() {
         return courseServicesContract.allCourses();
     }
 
