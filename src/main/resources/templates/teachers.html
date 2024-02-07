@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Profesores</title>
+</head>
+<body>
+<h1>Listado de Profesores</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>NIF</th>
+        <th>Nombre</th>
+        <th>Nombre de Usuario</th>
+        <th>Teléfono</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Itera sobre la lista de profesores y muestra cada uno en una fila de la tabla -->
+    <tr th:each="profesor : ${profesores}">
+        <td th:text="${profesor.idProfesor}"></td>
+        <td th:text="${profesor.email}"></td>
+        <td th:text="${profesor.nif}"></td>
+        <td th:text="${profesor.nombre}"></td>
+        <td th:text="${profesor.nombreUsuario}"></td>
+        <td th:text="${profesor.telefono}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Botón de regreso -->
+<button onclick="goBack()">Back</button>
+
+<script>
+    // Función para ir atrás en el historial del navegador
+    function goBack() {
+        window.location.href = "welcome";
+    }
+</script>
+</body>
+</html>

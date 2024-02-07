@@ -5,7 +5,7 @@ import com.example.proyectogrupal.services.ClaseServiceContract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.ui.Model;
 import java.util.List;
 
 @Controller
@@ -19,8 +19,10 @@ public class ClaseController {
     }
 
     @GetMapping
-    public List<Clase> allClasses() {
-        return claseServiceContract.allClasses();
+    public String allClasses(Model model) {
+        List<Clase> clases = claseServiceContract.allClasses();
+        model.addAttribute("clases", clases);
+        return "clases";
     }
 
     @PostMapping

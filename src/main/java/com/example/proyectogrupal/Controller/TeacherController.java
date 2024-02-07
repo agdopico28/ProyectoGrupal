@@ -5,37 +5,40 @@ import com.example.proyectogrupal.services.TeacherServicesContract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/teachers")
 public class TeacherController {
-    private final TeacherServicesContract teacherServices;
+    private final TeacherServicesContract teacherServicesContract;
 
     @Autowired
-    public TeacherController(TeacherServicesContract teacherServices) {
-        this.teacherServices = teacherServices;
+    public TeacherController(TeacherServicesContract teacherServicesContract) {
+        this.teacherServicesContract = teacherServicesContract;
     }
 
     @GetMapping
-    public List<Teacher> allTeachers() {
-        return teacherServices.allTeachers();
+    public String allTeachers(Model model) {
+        List<Teacher> teachers = teacherServicesContract.allTeachers();
+        model.addAttribute("profesores", teachers);
+        return "teachers";
     }
+
 
     @PostMapping
     public Teacher save(@RequestBody Teacher teacher) {
-        return teacherServices.save(teacher);
+        return teacherServicesContract.save(teacher);
     }
 
     @PutMapping("/update/{id}")
     public void modify(@RequestBody Teacher teacher, @PathVariable Long id) {
         teacher.setIdProfesor(id);
-        teacherServices.update(teacher);
+        teacherServicesContract.update(teacher);
     }
 
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id) {
-        teacherServices.delete(id);
+        teacherServicesContract.delete(id);
     }
 }

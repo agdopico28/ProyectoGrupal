@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "user_admin")
+@Table(name = "user admin")
 public class UserAdmin implements Serializable {
     @Id
     @Column(name = "id_usuario_admin")

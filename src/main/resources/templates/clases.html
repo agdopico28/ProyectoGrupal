@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Clases</title>
+</head>
+<body>
+<h1>Listado de Clases</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Profesor</th>
+        <th>Curso</th>
+        <th>Matrícula</th>
+        <th>Nombre de Clase</th>
+        <th>Color</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Itera sobre la lista de clases y muestra cada una en una fila de la tabla -->
+    <tr th:each="clase : ${clases}">
+        <td th:text="${clase.idClase}"></td>
+        <td th:text="${clase.teacher.nombre}"></td>
+        <td th:text="${clase.course.nombreCurso}"></td>
+        <td th:text="${clase.enrollment.idEnrollment}"></td>
+        <td th:text="${clase.nombreClase}"></td>
+        <td th:text="${clase.color}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Botón de regreso -->
+<button onclick="goBack()">Back</button>
+
+<script>
+    // Función para ir atrás en el historial del navegador
+    function goBack() {
+        window.location.href = "welcome";
+    }
+</script>
+</body>
+</html>

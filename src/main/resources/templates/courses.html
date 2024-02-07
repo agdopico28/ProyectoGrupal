@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Cursos</title>
+</head>
+<body>
+<h1>Listado de Cursos</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Fecha de Inicio</th>
+        <th>Fecha de Fin</th>
+        <th>Habilitar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Itera sobre la lista de cursos y muestra cada uno en una fila de la tabla -->
+    <tr th:each="curso : ${cursos}">
+        <td th:text="${curso.idCurso}"></td>
+        <td th:text="${curso.nombreCurso}"></td>
+        <td th:text="${curso.descripcionCurso}"></td>
+        <td th:text="${#dates.format(curso.fechaInicioCurso, 'dd-MM-yyyy')}"></td>
+        <td th:text="${#dates.format(curso.fechaFinCurso, 'dd-MM-yyyy')}"></td>
+        <td th:text="${curso.habilitar ? 'Sí' : 'No'}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Botón de regreso -->
+<button onclick="goBack()">Back</button>
+
+<script>
+    // Función para ir atrás en el historial del navegador
+    function goBack() {
+        window.location.href = "welcome";
+    }
+</script>
+</body>
+</html>
