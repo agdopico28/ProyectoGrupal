@@ -1,9 +1,10 @@
+
 package com.example.proyectogrupal.entity;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Time;
 
 @Entity
 @Table(name = "horarios")
@@ -17,14 +18,15 @@ public class Schedule implements Serializable {
     private Clase clase;
 
     @Column(name = "hora_inicio")
-    private Date horaInicio;
+    private Time horaInicio;
+
     @Column(name = "hora_fin")
-    private Date horaFin;
+    private Time horaFin;
 
     @Column(name = "dia_semana")
     private String diaSemana;
 
-    public Schedule(Long idHorario, Clase clase, Date horaInicio, Date horaFin, String diaSemana) {
+    public Schedule(Long idHorario, Clase clase, Time horaInicio, Time horaFin, String diaSemana) {
         this.idHorario = idHorario;
         this.clase = clase;
         this.horaInicio = horaInicio;
@@ -39,8 +41,8 @@ public class Schedule implements Serializable {
         return idHorario;
     }
 
-    public void setIdHorario(Long id_horario) {
-        this.idHorario = id_horario;
+    public void setIdHorario(Long idHorario) {
+        this.idHorario = idHorario;
     }
 
     public Clase getClase() {
@@ -51,27 +53,27 @@ public class Schedule implements Serializable {
         this.clase = clase;
     }
 
-    public Date getHoraInicio() {
+    public Time getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(Date hora_inicio) {
-        this.horaInicio = hora_inicio;
+    public void setHoraInicio(Time horaInicio) {
+        this.horaInicio = horaInicio;
     }
 
-    public Date getHoraFin() {
+    public Time getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(Date hora_fin) {
-        this.horaFin = hora_fin;
+    public void setHoraFin(Time horaFin) {
+        this.horaFin = horaFin;
     }
 
     public String getDiaSemana() {
         return diaSemana;
     }
 
-    public void setDiaSemana(String dia_semana) {
-        this.diaSemana = dia_semana;
+    public void setDiaSemana(String diaSemana) {
+        this.diaSemana = diaSemana;
     }
 }
