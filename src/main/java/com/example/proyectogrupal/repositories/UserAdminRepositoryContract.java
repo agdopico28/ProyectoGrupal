@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserAdminRepositoryContract {
     List<UserAdmin> allUserAdmin();
-    UserAdmin findByNameUserAdmin(String classUserAdmin);
+    UserAdmin findByNameUserAdmin(String userAdminName);
     UserAdmin save(UserAdmin userAdmin);
     void update(UserAdmin userAdmin);
     void delete(String userAdminName);

@@ -20,8 +20,8 @@ public class UserAdminServices implements UserAdminServicesContract {
     }
 
     @Override
-    public UserAdmin findByNameUserAdmin(String classUserAdmin) {
-        return userAdminRep.findByNameUserAdmin(classUserAdmin);
+    public UserAdmin findByNameUserAdmin(String userAdminName) {
+        return userAdminRep.findByNameUserAdmin(userAdminName);
     }
 
     @Override

@@ -28,13 +28,13 @@ public class UserAdminController {
         return userAdminServicesContract.save(userAdmin);
     }
 
-    @PutMapping("/update/{name}")
-    public void modify(@RequestBody UserAdmin userAdmin) {
+    @PutMapping("/update/{userNameAdmin}")
+    public void modify(@RequestBody UserAdmin userAdmin, @PathVariable String userNameAdmin) {
         userAdminServicesContract.update(userAdmin);
     }
 
-    @DeleteMapping("/delete/{name}")
-    public void deleteByNameStudent(@PathVariable String userNameAdmin) {
+    @DeleteMapping("/delete/{userNameAdmin}")
+    public void deleteByNameUserAdmin(@PathVariable String userNameAdmin) {
         userAdminServicesContract.delete(userNameAdmin);
     }
 }

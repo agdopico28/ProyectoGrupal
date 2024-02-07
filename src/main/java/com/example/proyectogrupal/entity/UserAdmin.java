@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "user admin")
+@Table(name = "user_admin")
 public class UserAdmin implements Serializable {
     @Id
     @Column(name = "id_usuario_admin")
@@ -23,7 +23,7 @@ public class UserAdmin implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "contraseña")
+    @Column(name = "contrasenya")
     private String contrasenya;
 
     public UserAdmin(Long idUsuarioAdmin, String nombreUsuario, String nombre,
