@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EnrollmentServices implements EnrollmentServicesContract{
+public class EnrollmentServices implements EnrollmentServicesContract {
     private final EnrollmentRepositoryContract enrollmentRep;
 
     public EnrollmentServices(EnrollmentRepositoryContract enrollmentRep) {
@@ -20,8 +20,13 @@ public class EnrollmentServices implements EnrollmentServicesContract{
     }
 
     @Override
-    public Enrollment findByIdEnrollment(Integer id) {
+    public Enrollment findByIdEnrollment(Long id) {
         return enrollmentRep.findByIdEnrollment(id);
+    }
+
+    @Override
+    public Enrollment findByEnrollment(Long userId, Long courseId) {
+        return enrollmentRep.findByEnrollment(userId, courseId);
     }
 
     @Override

@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface EnrollmentServicesContract {
     List<Enrollment> allEnrollment();
-    Enrollment findByIdEnrollment(Integer id);
+    Enrollment findByIdEnrollment(Long id);
+    Enrollment findByEnrollment(Long userId, Long courseId);
     Enrollment save (Enrollment enrollment);
     void update (Enrollment enrollment);
     void delete (Long id);

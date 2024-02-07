@@ -28,7 +28,7 @@ public class EnrollmentController {
         return enrollmentServicesContract.save(enrollment);
     }
 
-    @PostMapping("/update/{name}")
+    @PutMapping("/update")
     public void modify(@RequestBody Enrollment enrollment) {
         enrollmentServicesContract.update(enrollment);
     }
