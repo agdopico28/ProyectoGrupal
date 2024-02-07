@@ -61,5 +61,4 @@ public class StudentRepository implements StudentRepositoryContract {
             }
         }
     }
-
 }

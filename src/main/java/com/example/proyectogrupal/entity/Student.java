@@ -70,8 +70,8 @@ public class Student implements Serializable {
         return nombreUsuario;
     }
 
-    public void setNombreUsuario(String nombreusuario) {
-        this.nombreUsuario = nombreusuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public String getContrasenya() {
