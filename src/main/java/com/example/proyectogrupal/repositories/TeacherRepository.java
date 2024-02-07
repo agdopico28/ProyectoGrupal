@@ -1,18 +1,15 @@
 package com.example.proyectogrupal.repositories;
 
-import com.example.proyectogrupal.entity.Course;
 import com.example.proyectogrupal.entity.Teacher;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 @Repository
-public class TeacherRepository implements TeacherRepositoryContract{
-    private final Map<Long, Teacher> teachers = new HashMap<>();
-    private EntityManager entityManager;
+public class TeacherRepository implements TeacherRepositoryContract {
+    private final EntityManager entityManager;
 
     public TeacherRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
@@ -20,18 +17,26 @@ public class TeacherRepository implements TeacherRepositoryContract{
 
     @Override
     public List<Teacher> allTeachers() {
-        return new ArrayList<>(teachers.values());
+        return entityManager.createQuery("SELECT t FROM Teacher t", Teacher.class)
+                .getResultList();
     }
 
     @Override
-    public Teacher findByNameTeacher(String classTeacher) {
-        if(classTeacher == null) {
+    public Teacher findById(Long id) {
+        if (id == null) {
             return null;
         }
-        List<Teacher> teachers = entityManager.createQuery("SELECT t FROM Teacher t WHERE t.nombre = :nombre", Teacher.class)
-                .setParameter("nombre", classTeacher)
-                .getResultList();
+        return entityManager.find(Teacher.class, id);
+    }
 
+    @Override
+    public Teacher findByUsername(String username) {
+        if (username == null) {
+            return null;
+        }
+        List<Teacher> teachers = entityManager.createQuery("SELECT t FROM Teacher t WHERE t.nombreUsuario = :username", Teacher.class)
+                .setParameter("username", username)
+                .getResultList();
         return teachers.isEmpty() ? null : teachers.get(0);
     }
 
@@ -40,10 +45,9 @@ public class TeacherRepository implements TeacherRepositoryContract{
         if (teacher.getIdProfesor() == null) {
             entityManager.persist(teacher);
             return teacher;
-        }else {
-            return  entityManager.merge(teacher);
+        } else {
+            return entityManager.merge(teacher);
         }
-
     }
 
     @Override
@@ -52,21 +56,12 @@ public class TeacherRepository implements TeacherRepositoryContract{
     }
 
     @Override
-    public  void delete(String teacherName) {
-        if(teacherName != null) {
-            // Buscar la entidad por nombre
-            Teacher teacher = entityManager.createQuery("SELECT t FROM Teacher t WHERE t.nombre= :teacherName", Teacher.class)
-                    .setParameter("teacherName", teacherName)
-                    .getResultList()
-                    .stream()
-                    .findFirst()
-                    .orElse(null);
-
-            // Si la entidad existe, eliminarla
-            if(teacher != null) {
-                entityManager.remove(entityManager.contains(teacher) ? teacher : entityManager.merge(teacher));
+    public void delete(Long id) {
+        if (id != null) {
+            Teacher teacher = entityManager.find(Teacher.class, id);
+            if (teacher != null) {
+                entityManager.remove(teacher);
             }
         }
     }
-
 }

@@ -8,34 +8,39 @@ import java.util.List;
 
 @Service
 public class TeacherServices implements TeacherServicesContract {
-    private final TeacherRepositoryContract teacherRep;
+    private final TeacherRepositoryContract teacherRepository;
 
-    public TeacherServices(TeacherRepositoryContract teacherRep) {
-        this.teacherRep = teacherRep;
+    public TeacherServices(TeacherRepositoryContract teacherRepository) {
+        this.teacherRepository = teacherRepository;
     }
 
     @Override
     public List<Teacher> allTeachers() {
-        return teacherRep.allTeachers();
+        return teacherRepository.allTeachers();
     }
 
     @Override
-    public Teacher findByNameTeacher(String classTeacher) {
-        return teacherRep.findByNameTeacher(classTeacher);
+    public Teacher findById(Long id) {
+        return teacherRepository.findById(id);
+    }
+
+    @Override
+    public Teacher findByUsername(String username) {
+        return teacherRepository.findByUsername(username);
     }
 
     @Override
     public Teacher save(Teacher teacher) {
-        return teacherRep.save(teacher);
+        return teacherRepository.save(teacher);
     }
 
     @Override
     public void update(Teacher teacher) {
-        teacherRep.update(teacher);
+        teacherRepository.update(teacher);
     }
 
     @Override
-    public void delete(String teacherName) {
-        teacherRep.delete(teacherName);
+    public void delete(Long id) {
+        teacherRepository.delete(id);
     }
 }
