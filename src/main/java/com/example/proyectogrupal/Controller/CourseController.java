@@ -31,8 +31,8 @@ public class CourseController {
         courseServicesContract.update(course);
     }
 
-    @DeleteMapping("/delete/{nombre}")
-    public void delete(@PathVariable String classCourse) {
-        courseServicesContract.delete(classCourse);
+    @DeleteMapping("/delete/{courseName}")
+    public void delete(@PathVariable String courseName) {
+        courseServicesContract.delete(courseName);
     }
 }

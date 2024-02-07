@@ -4,25 +4,25 @@ import com.example.proyectogrupal.entity.Course;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository
+@Transactional
 public class CourseRepository implements CourseRepositoryContract {
 
-    private final Map<Long, Course> courses = new HashMap<>();
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Autowired
-    public CourseRepository(EntityManager theEntityManager) {
-        entityManager = theEntityManager;
+    public CourseRepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
+
     @Override
     public List<Course> allCourses() {
-        return new ArrayList<>(courses.values());
+        return entityManager.createQuery("SELECT c FROM Course c", Course.class)
+                .getResultList();
     }
 
     @Override
@@ -37,13 +37,12 @@ public class CourseRepository implements CourseRepositoryContract {
         return courses.isEmpty() ? null : courses.get(0);
     }
 
-
     @Override
     public Course save(Course course) {
         if (course.getIdCurso() == null) {
             entityManager.persist(course);
             return course;
-        }else{
+        } else {
             return entityManager.merge(course);
         }
     }
@@ -56,18 +55,9 @@ public class CourseRepository implements CourseRepositoryContract {
     @Override
     public void delete(String courseName) {
         if(courseName != null) {
-            // Buscar la entidad por nombre
-            Course course = entityManager.createQuery("SELECT c FROM Course c WHERE c.nombreCurso = :courseName", Course.class)
+            entityManager.createQuery("DELETE FROM Course c WHERE c.nombreCurso = :courseName")
                     .setParameter("courseName", courseName)
-                    .getResultList()
-                    .stream()
-                    .findFirst()
-                    .orElse(null);
-
-            // Si la entidad existe, eliminarla
-            if(course != null) {
-                entityManager.remove(entityManager.contains(course) ? course : entityManager.merge(course));
-            }
+                    .executeUpdate();
         }
     }
 }
