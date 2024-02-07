@@ -28,13 +28,14 @@ public class ClaseController {
         return claseServiceContract.save(clase);
     }
 
-    @PutMapping("/update/{name}")
-    public void modify(@RequestBody Clase clase) {
+    @PutMapping("/update/{id}")
+    public void modify(@PathVariable Long id, @RequestBody Clase clase) {
+        clase.setIdClase(id); // Asignar el ID recibido al objeto Clase
         claseServiceContract.update(clase);
     }
 
-    @DeleteMapping("/delete/{name}")
-    public void delete(@PathVariable String claseName) {
-        claseServiceContract.delete(claseName);
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id) {
+        claseServiceContract.delete(id);
     }
 }

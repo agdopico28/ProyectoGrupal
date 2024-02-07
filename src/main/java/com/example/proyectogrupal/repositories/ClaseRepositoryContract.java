@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface ClaseRepositoryContract {
     List<Clase> allClasses();
-    Clase findByNameClass(String claseName);
+    Clase findById(Long id);
+    Clase findByName(String className);
     Clase save(Clase clase);
     void update(Clase clase);
-    void delete(String nameClase);
+    void delete(Long id);
 }

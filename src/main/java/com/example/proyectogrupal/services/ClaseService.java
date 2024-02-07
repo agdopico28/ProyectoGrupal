@@ -1,10 +1,10 @@
 package com.example.proyectogrupal.services;
 
 import com.example.proyectogrupal.entity.Clase;
-import com.example.proyectogrupal.repositories.ClaseRepository;
 import com.example.proyectogrupal.repositories.ClaseRepositoryContract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -12,7 +12,7 @@ public class ClaseService implements ClaseServiceContract {
     private final ClaseRepositoryContract claseRep;
 
     @Autowired
-    public ClaseService(ClaseRepository claseRepository) {
+    public ClaseService(ClaseRepositoryContract claseRepository) {
         this.claseRep = claseRepository;
     }
 
@@ -22,8 +22,8 @@ public class ClaseService implements ClaseServiceContract {
     }
 
     @Override
-    public Clase findByNameClass(String claseName) {
-        return claseRep.findByNameClass(claseName);
+    public Clase findById(Long id) {
+        return claseRep.findById(id);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ClaseService implements ClaseServiceContract {
     }
 
     @Override
-    public void delete(String claseName) {
-        claseRep.delete(claseName);
+    public void delete(Long id) {
+        claseRep.delete(id);
     }
 }

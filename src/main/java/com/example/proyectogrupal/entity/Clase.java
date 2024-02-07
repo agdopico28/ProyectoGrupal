@@ -13,7 +13,7 @@ public class Clase implements Serializable {
     @Column(name = "id_clase")
     private Long idClase;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_profesor", referencedColumnName = "id_profesor")
     private Teacher teacher;
 
@@ -27,9 +27,12 @@ public class Clase implements Serializable {
 
     @Column(name = "nombre_clase")
     private String nombreClase;
+
     @Column(name = "color")
     private String color;
 
+    public Clase() {
+    }
 
     public Clase(Long idClase, Teacher teacher, Course course, Enrollment enrollment, String nombreClase, String color) {
         this.idClase = idClase;
@@ -40,9 +43,6 @@ public class Clase implements Serializable {
         this.color = color;
     }
 
-    public Clase() {
-    }
-
     public Long getIdClase() {
         return idClase;
     }
@@ -51,27 +51,27 @@ public class Clase implements Serializable {
         this.idClase = idClase;
     }
 
-    public Teacher getProfesor() {
+    public Teacher getTeacher() {
         return teacher;
     }
 
-    public void setProfesor(Teacher teacher) {
+    public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
 
-    public Course getCurso() {
+    public Course getCourse() {
         return course;
     }
 
-    public void setCurso(Course course) {
+    public void setCourse(Course course) {
         this.course = course;
     }
 
-    public Enrollment getMatricula() {
+    public Enrollment getEnrollment() {
         return enrollment;
     }
 
-    public void setMatricula(Enrollment enrollment) {
+    public void setEnrollment(Enrollment enrollment) {
         this.enrollment = enrollment;
     }
 
