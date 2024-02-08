@@ -18,7 +18,8 @@ public class ClaseRepository implements ClaseRepositoryContract {
 
     @Override
     public List<Clase> allClasses() {
-        return entityManager.createQuery("SELECT c FROM Clase c", Clase.class).getResultList();
+        return entityManager.createQuery("select c from Clase c", Clase.class)
+                .getResultList();
     }
 
     @Override

@@ -22,7 +22,7 @@ public class AuthenticationService {
         // Verificar si se encontró un usuario administrador con el nombre de usuario proporcionado
         if (userAdmin != null) {
             // Comparar la contraseña proporcionada con la contraseña almacenada en la base de datos
-            return password.equals(userAdmin.getContrasenya());
+            return password.equals(userAdmin.getContraseña());
         }
         return false; // No se encontró un usuario administrador con el nombre de usuario proporcionado
     }

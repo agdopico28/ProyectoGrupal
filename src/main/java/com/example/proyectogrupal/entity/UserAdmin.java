@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "user admin")
+@Table(name = "user_admin")
 public class UserAdmin implements Serializable {
     @Id
     @Column(name = "id_usuario_admin")
@@ -23,16 +23,16 @@ public class UserAdmin implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "contrasenya")
-    private String contrasenya;
+    @Column(name = "contraseña")
+    private String contraseña;
 
     public UserAdmin(Long idUsuarioAdmin, String nombreUsuario, String nombre,
-                     String email, String contrasenya) {
+                     String email, String contraseña) {
         this.idUsuarioAdmin = idUsuarioAdmin;
         this.nombreUsuario = nombreUsuario;
         this.nombre = nombre;
         this.email = email;
-        this.contrasenya = contrasenya;
+        this.contraseña = contraseña;
     }
 
     public UserAdmin() {
@@ -72,11 +72,11 @@ public class UserAdmin implements Serializable {
         this.email = email;
     }
 
-    public String getContrasenya() {
-        return contrasenya;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public void setContrasenya(String contraseña) {
-        this.contrasenya = contraseña;
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 }

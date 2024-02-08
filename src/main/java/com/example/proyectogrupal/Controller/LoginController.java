@@ -28,15 +28,13 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, Model model) {
+    public String login(@RequestParam String username, @RequestParam String password) {
         boolean isAuthenticated = authenticationService.authenticate(username, password);
 
         if (isAuthenticated) {
             return "welcome";
         } else {
-            // Autenticación fallida, agregar un mensaje de error y redirigir de vuelta al formulario de inicio de sesión
-            model.addAttribute("error", "Credenciales inválidas");
-            return "login";
+            return "error";
         }
     }
 }
