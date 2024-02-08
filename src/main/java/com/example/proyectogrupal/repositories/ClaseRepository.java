@@ -1,7 +1,7 @@
 package com.example.proyectogrupal.repositories;
 
 import com.example.proyectogrupal.entity.Clase;
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

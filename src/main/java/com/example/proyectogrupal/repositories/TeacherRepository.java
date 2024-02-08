@@ -1,7 +1,7 @@
 package com.example.proyectogrupal.repositories;
 
 import com.example.proyectogrupal.entity.Teacher;
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

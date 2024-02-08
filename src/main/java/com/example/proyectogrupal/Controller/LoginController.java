@@ -18,7 +18,7 @@ public class LoginController {
         this.authenticationService = authenticationService;
     }
 
-    @GetMapping("/loogin")
+    @GetMapping("/login")
     public String showLoginForm() {
         return "login";
     }
@@ -27,7 +27,7 @@ public class LoginController {
         return "welcome";
     }
 
-    @PostMapping("/loogin")
+    @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
         boolean isAuthenticated = authenticationService.authenticate(username, password);
 
